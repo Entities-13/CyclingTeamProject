@@ -8,6 +8,24 @@
       "giroDItaliaWins": 2,
       "vueltaEspana": 3,
       "currentTeam": "Trek–Segafredo"
+    },
+    {
+      "firstName": "Tom",
+      "lastName": "Dumoulin",
+      "age": 26,
+      "tourDeFranceWins": 0,
+      "giroDItaliaWins": 1,
+      "vueltaEspana": 0,
+      "currentTeam": "Sunweb"
+    },
+     {
+      "firstName": "Vincenzo",
+      "lastName": "Nibali",
+      "age": 32,
+      "tourDeFranceWins": 1,
+      "giroDItaliaWins": 2,
+      "vueltaEspana": 1,
+      "currentTeam": "Trek–Segafredo"
     }
   ]
 }
