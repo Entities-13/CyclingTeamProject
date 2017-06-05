@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -16,9 +17,11 @@ namespace Cycling.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string filePath= HttpContext.Current.Server.MapPath("~/Common/JsonData/CyclistsData.json");
+
             var cyclistsFromJson = new LoadDataFromJson();
 
-            var cyclists= cyclistsFromJson.LoadcyClistsDataFromJson();
+            var cyclists= cyclistsFromJson.LoadData(filePath);
         }
     }
 }

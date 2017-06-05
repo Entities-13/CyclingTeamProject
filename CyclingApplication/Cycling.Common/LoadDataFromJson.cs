@@ -1,4 +1,5 @@
-﻿using Cycling.Models;
+﻿using Cycling.Common.Contracts;
+using Cycling.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -7,14 +8,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Cycling.Common
 {
-    public class LoadDataFromJson
+    public class LoadDataFromJson : ILoadData
     {
-        public ICollection<Cyclist> LoadcyClistsDataFromJson()
+        public ICollection LoadData(string filePath)
         {
-            dynamic json = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("C:\\Users\\Shopov\\Documents\\TortoiseGitHub\\CyclingTeamProject\\CyclingApplication\\Cycling.Common\\JsonData/CyclistsData.json"));
+            dynamic json = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(filePath));
             var collectionOfCyclists = new List<Cyclist>();
             foreach (var item in json)
             {
