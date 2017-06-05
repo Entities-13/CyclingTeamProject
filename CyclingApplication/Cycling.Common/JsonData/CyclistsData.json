@@ -6,7 +6,7 @@
       "age": 34,
       "tourDeFranceWins": 2,
       "giroDItaliaWins": 2,
-      "vueltaEspana": 3,
+      "vueltaEspanaWins": 3,
       "currentTeam": "Trek–Segafredo"
     },
     {
@@ -15,7 +15,7 @@
       "age": 26,
       "tourDeFranceWins": 0,
       "giroDItaliaWins": 1,
-      "vueltaEspana": 0,
+      "vueltaEspanaWins": 0,
       "currentTeam": "Sunweb"
     },
      {
@@ -24,7 +24,7 @@
       "age": 32,
       "tourDeFranceWins": 1,
       "giroDItaliaWins": 2,
-      "vueltaEspana": 1,
+      "vueltaEspanaWins": 1,
       "currentTeam": "Bahrain–Merida"
     }
   ]
