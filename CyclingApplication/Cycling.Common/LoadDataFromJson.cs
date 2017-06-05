@@ -12,9 +12,9 @@ using System.Collections;
 
 namespace Cycling.Common
 {
-    public class LoadDataFromJson : ILoadData
+    public class LoadDataFromJson : ILoadData<Cyclist>
     {
-        public ICollection LoadData(string filePath)
+        public IEnumerable<Cyclist> LoadData(string filePath)
         {
             dynamic json = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(filePath));
             var collectionOfCyclists = new List<Cyclist>();

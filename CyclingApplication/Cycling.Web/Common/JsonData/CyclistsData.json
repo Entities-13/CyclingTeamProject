@@ -1,29 +1,47 @@
 ﻿[
-    {
-      "firstName": "Alberto",
-      "lastName": "Contador",
-      "age": 34,
-      "tourDeFranceWins": 2,
-      "giroDItaliaWins": 2,
-      "vueltaEspanaWins": 3,
-      "currentTeam": "Trek–Segafredo"
-    },
-    {
-      "firstName": "Tom",
-      "lastName": "Dumoulin",
-      "age": 26,
-      "tourDeFranceWins": 0,
-      "giroDItaliaWins": 1,
-      "vueltaEspanaWins": 0,
-      "currentTeam": "Sunweb"
-    },
-    {
-      "firstName": "Vincenzo",
-      "lastName": "Nibali",
-      "age": 32,
-      "tourDeFranceWins": 1,
-      "giroDItaliaWins": 2,
-      "vueltaEspanaWins": 1,
-      "currentTeam": "Bahrain–Merida"
-    }
+  {
+    "firstName": "Alberto",
+    "lastName": "Contador",
+    "age": 34,
+    "tourDeFranceWins": 2,
+    "giroDItaliaWins": 2,
+    "vueltaEspanaWins": 3,
+    "currentTeam": "Trek–Segafredo"
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Dumoulin",
+    "age": 26,
+    "tourDeFranceWins": 0,
+    "giroDItaliaWins": 1,
+    "vueltaEspanaWins": 0,
+    "currentTeam": "Sunweb"
+  },
+  {
+    "firstName": "Marco",
+    "lastName": "Pantani",
+    "age": 34,
+    "tourDeFranceWins": 1,
+    "giroDItaliaWins": 1,
+    "vueltaEspanaWins": 0,
+    "currentTeam": "Mercatone Uno"
+  },
+  {
+    "firstName": "Vincenzo",
+    "lastName": "Nibali",
+    "age": 32,
+    "tourDeFranceWins": 1,
+    "giroDItaliaWins": 2,
+    "vueltaEspanaWins": 1,
+    "currentTeam": "Bahrain–Merida"
+  },
+  {
+    "firstName": "Miguel",
+    "lastName": "Indurain",
+    "age": 52,
+    "tourDeFranceWins": 5,
+    "giroDItaliaWins": 2,
+    "vueltaEspanaWins": 0,
+    "currentTeam": "Reynolds"
+  }
 ]

@@ -1,4 +1,5 @@
 ﻿using Cycling.Common;
+using Cycling.Data;
 using Cycling.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -22,6 +23,14 @@ namespace Cycling.Web
             var cyclistsFromJson = new LoadDataFromJson();
 
             var cyclists= cyclistsFromJson.LoadData(filePath);
+
+            var dbContext = new CyclingDbContext();
+            foreach (var item in cyclists)
+            {
+                dbContext.Cyclists.Add(item);
+            }
+                
+            dbContext.SaveChanges();
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 
 namespace Cycling.Common.Contracts
 {
-    public interface ILoadData
+    public interface ILoadData<T>
     {
-        ICollection LoadData(string filePath);
+        IEnumerable<T> LoadData(string filePath);
     }
 }
