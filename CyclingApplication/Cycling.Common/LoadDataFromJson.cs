@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Cycling.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -11,15 +12,17 @@ namespace Cycling.Common
 {
     public class LoadDataFromJson
     {
-        static void Main(string[] args)
+        public ICollection<Cyclist> LoadcyClistsDataFromJson()
         {
-            var jsonObj = JsonConvert.DeserializeObject("");
+            dynamic json = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("../../JsonData/CyclistsData.json"));
+            var collectionOfCyclists = new List<Cyclist>();
+            foreach (var item in json)
+            {
+                var cyclist = JsonConvert.DeserializeObject<Cyclist>(item.ToString());
+                collectionOfCyclists.Add(cyclist);
+            }
 
-            StreamReader re = new StreamReader("../../JsonData/CyclistsData.json");
-            var sss = JsonConvert.SerializeObject("../../ JsonData/CyclistsData.json");
-            Console.WriteLine(sss);
-           var json = JObject.Parse(sss);
-            //Console.WriteLine(parsedData[);
+            return collectionOfCyclists;
         }
     }
 }

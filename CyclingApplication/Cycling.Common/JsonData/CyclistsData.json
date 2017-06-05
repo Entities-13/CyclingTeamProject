@@ -1,5 +1,4 @@
-﻿{
-  "cyclists": [
+﻿[
     {
       "firstName": "Alberto",
       "lastName": "Contador",
@@ -18,7 +17,7 @@
       "vueltaEspanaWins": 0,
       "currentTeam": "Sunweb"
     },
-     {
+    {
       "firstName": "Vincenzo",
       "lastName": "Nibali",
       "age": 32,
@@ -27,5 +26,4 @@
       "vueltaEspanaWins": 1,
       "currentTeam": "Bahrain–Merida"
     }
-  ]
-}
+]
