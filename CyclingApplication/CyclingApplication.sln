@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycling.Web", "Cycling.Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycling.App.Tests", "Cycling.App.Tests\Cycling.App.Tests.csproj", "{CBDBA704-1F2F-4998-AA1E-3C2BA4E19450}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycling.Common", "Cycling.Common\Cycling.Common.csproj", "{2A7747A0-7F02-4F84-A427-050858CBD999}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CBDBA704-1F2F-4998-AA1E-3C2BA4E19450}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBDBA704-1F2F-4998-AA1E-3C2BA4E19450}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBDBA704-1F2F-4998-AA1E-3C2BA4E19450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7747A0-7F02-4F84-A427-050858CBD999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7747A0-7F02-4F84-A427-050858CBD999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7747A0-7F02-4F84-A427-050858CBD999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7747A0-7F02-4F84-A427-050858CBD999}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

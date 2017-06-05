@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cycling.Models
+namespace Cycling.Common
 {
-    public class Class1
+    public class LoadDataFromJson
     {
+
     }
 }
