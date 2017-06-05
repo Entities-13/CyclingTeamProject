@@ -14,7 +14,7 @@ namespace Cycling.Common
     {
         public ICollection<Cyclist> LoadcyClistsDataFromJson()
         {
-            dynamic json = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("../../JsonData/CyclistsData.json"));
+            dynamic json = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("C:\\Users\\Shopov\\Documents\\TortoiseGitHub\\CyclingTeamProject\\CyclingApplication\\Cycling.Common\\JsonData/CyclistsData.json"));
             var collectionOfCyclists = new List<Cyclist>();
             foreach (var item in json)
             {

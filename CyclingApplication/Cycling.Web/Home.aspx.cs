@@ -16,7 +16,6 @@ namespace Cycling.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string absoluteSystemPath = Server.MapPath("~/relative/path.aspx");
             var cyclistsFromJson = new LoadDataFromJson();
 
             var cyclists= cyclistsFromJson.LoadcyClistsDataFromJson();
