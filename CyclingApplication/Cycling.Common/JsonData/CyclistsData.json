@@ -1,0 +1,13 @@
+﻿{
+  "cyclists": [
+    {
+      "firstName": "Alberto",
+      "lastName": "Contador",
+      "age": 34,
+      "tourDeFranceWins": 2,
+      "giroDItaliaWins": 2,
+      "vueltaEspana": 3,
+      "currentTeam": "Trek–Segafredo"
+    }
+  ]
+}
