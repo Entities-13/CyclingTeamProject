@@ -13,5 +13,10 @@ namespace Cycling.Web
         {
 
         }
+
+        protected void ButtonAddNewCyclicst_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
