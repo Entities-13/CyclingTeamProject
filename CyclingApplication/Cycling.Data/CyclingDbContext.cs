@@ -10,7 +10,7 @@ namespace Cycling.Data
         {
         }
 
-        public DbSet<Cyclist> Cyclists { get; set; }
+        public virtual IDbSet<Cyclist> Cyclists { get; set; }
 
     }
 }
