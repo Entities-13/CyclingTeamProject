@@ -18,18 +18,23 @@ namespace Cycling.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string filePath= HttpContext.Current.Server.MapPath("~/Common/JsonData/CyclistsData.json");
+            
+        }
+
+        protected void ButtonAddJsonData_Click(object sender, EventArgs e)
+        {
+            string filePath = HttpContext.Current.Server.MapPath("~/Common/JsonData/CyclistsData.json");
 
             var cyclistsFromJson = new LoadDataFromJson();
 
-            var cyclists= cyclistsFromJson.LoadData(filePath);
+            var cyclists = cyclistsFromJson.LoadData(filePath);
 
             var dbContext = new CyclingDbContext();
             foreach (var item in cyclists)
             {
                 dbContext.Cyclists.Add(item);
             }
-                
+
             dbContext.SaveChanges();
         }
     }

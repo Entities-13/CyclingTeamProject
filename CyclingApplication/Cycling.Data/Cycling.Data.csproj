@@ -54,6 +54,10 @@
     <Compile Include="Migrations\201706051407115_initial.Designer.cs">
       <DependentUpon>201706051407115_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706061815411_Max Length atrributes added.cs" />
+    <Compile Include="Migrations\201706061815411_Max Length atrributes added.Designer.cs">
+      <DependentUpon>201706061815411_Max Length atrributes added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706051407115_initial.resx">
       <DependentUpon>201706051407115_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061815411_Max Length atrributes added.resx">
+      <DependentUpon>201706061815411_Max Length atrributes added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

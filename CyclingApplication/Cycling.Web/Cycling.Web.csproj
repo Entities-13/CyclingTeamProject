@@ -106,7 +106,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
+    <Content Include="Cyclists.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -125,12 +125,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Cyclists.aspx.cs">
+      <DependentUpon>Cyclists.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Cyclists.aspx.designer.cs">
+      <DependentUpon>Cyclists.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cycling.Master.cs">
       <DependentUpon>Cycling.Master</DependentUpon>

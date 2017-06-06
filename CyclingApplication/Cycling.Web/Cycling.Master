@@ -16,7 +16,7 @@
         <div>
             <ul class="nav nav-pills nav-justified">
                 <li role="presentation" class="active"><a href="Home.aspx">Home</a></li>
-                <li role="presentation"><a href="About.aspx">About</a></li>
+                <li role="presentation"><a href="Cyclists.aspx">Cyclists Statistics</a></li>
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolderCycling" runat="server">
             </asp:ContentPlaceHolder>
