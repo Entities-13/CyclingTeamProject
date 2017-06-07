@@ -125,6 +125,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Contracts\ILoadData.cs" />
+    <Compile Include="Common\LoadDataFromJson.cs" />
     <Compile Include="Cyclists.aspx.cs">
       <DependentUpon>Cyclists.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,10 +152,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cycling.Common\Cycling.Common.csproj">
-      <Project>{2a7747a0-7f02-4f84-a427-050858cbd999}</Project>
-      <Name>Cycling.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cycling.Data\Cycling.Data.csproj">
       <Project>{c5bd4c3c-6fca-4476-8f49-4f6d35c0e499}</Project>
       <Name>Cycling.Data</Name>
