@@ -13,5 +13,9 @@ namespace Cycling.Data
         public virtual IDbSet<Cyclist> Cyclists { get; set; }
 
         public virtual IDbSet<Bicycle> Bicycles { get; set; }
+
+        public virtual IDbSet<Wheel> Wheels { get; set; }
+
+        public virtual IDbSet<Tire> Tires { get; set; }
     }
 }

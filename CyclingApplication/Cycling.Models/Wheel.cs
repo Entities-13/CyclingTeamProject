@@ -1,9 +1,13 @@
-﻿namespace Cycling.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Cycling.Models
 {
     public class Wheel
     {
         public int Id { get; set; }
 
+        [MaxLength(40)]
+        [Required]
         public string Brand { get; set; }
 
         public int Size { get; set; }

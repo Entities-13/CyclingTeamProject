@@ -27,5 +27,6 @@ namespace Cycling.Models
             set { cyclist = value; }
         }
 
+        public virtual Wheel Wheel { get; set; }
     }
 }

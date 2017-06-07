@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Cycling.Models
 {
-    class Tyre
+    public class Tire
     {
+        public int Id { get; set; }
+
+        [MaxLength(40)]
+        [Required]
+        public string Brand { get; set; }
+
+        public int Size { get; set; }
     }
 }
