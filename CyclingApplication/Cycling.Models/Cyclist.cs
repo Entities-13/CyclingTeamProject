@@ -1,9 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cycling.Models
 {
     public class Cyclist
     {
+        private ICollection<Bicycle> bicycle;
+
+        public Cyclist()
+        {
+            this.bicycle = new HashSet<Bicycle>();
+        }
+
         public int Id { get; set; }
 
         [MaxLength(40)]
@@ -22,5 +30,12 @@ namespace Cycling.Models
 
         [MaxLength(50)]
         public string CurrentTeam { get; set; }
+
+        public virtual ICollection<Bicycle> Bicycle
+        {
+            get { return bicycle; }
+            set { bicycle = value; }
+        }
+
     }
 }

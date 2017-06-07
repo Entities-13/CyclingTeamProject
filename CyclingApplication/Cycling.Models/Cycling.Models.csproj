@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bicycle.cs" />
     <Compile Include="Cyclist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
