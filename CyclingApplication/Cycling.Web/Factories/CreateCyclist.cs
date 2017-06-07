@@ -83,11 +83,12 @@ namespace Cycling.Web.Factories
                 CurrentTeam = this.currentTeam
             };
 
+            using (var dbContext = new CyclingDbContext())
+            {
+                dbContext.Cyclists.Add(cyclist);
 
-            var dbContext = new CyclingDbContext();
-            dbContext.Cyclists.Add(cyclist);
-
-            dbContext.SaveChanges();
+                dbContext.SaveChanges();
+            }
         }
     }
 }

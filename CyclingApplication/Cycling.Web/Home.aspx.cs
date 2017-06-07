@@ -18,7 +18,7 @@ namespace Cycling.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void ButtonAddJsonData_Click(object sender, EventArgs e)
@@ -26,16 +26,17 @@ namespace Cycling.Web
             string filePath = HttpContext.Current.Server.MapPath("~/Common/JsonData/CyclistsData.json");
 
             var cyclistsFromJson = new LoadDataFromJson();
-
             var cyclists = cyclistsFromJson.LoadData(filePath);
 
-            var dbContext = new CyclingDbContext();
-            foreach (var item in cyclists)
+            using (var dbContext = new CyclingDbContext())
             {
-                dbContext.Cyclists.Add(item);
-            }
+                foreach (var item in cyclists)
+                {
+                    dbContext.Cyclists.Add(item);
+                }
 
-            dbContext.SaveChanges();
+                dbContext.SaveChanges();
+            }
         }
     }
 }
