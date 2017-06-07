@@ -14,18 +14,5 @@ namespace Cycling.Web
         {
 
         }
-
-        protected void ButtonAddNewCyclicst_Click(object sender, EventArgs e)
-        {
-            var cyclist = new CreateCyclist(this.TextBoxFirstName.Text, this.TextBoxLastName.Text, 
-                int.Parse(this.TextBoxAge.Text), int.Parse(this.TextBoxTour.Text),
-                int.Parse(this.TextBoxGiro.Text), int.Parse(this.TextBoxVuelta.Text), 
-                this.TextBoxTeam.Text);
-
-            cyclist.Create();
-            // TODO: must be fixed after new cyclist creation, grid should display new rider automatically 
-            // not like now with manual reload of the page 
-            Response.Redirect("Cyclists.aspx");
-        }
     }
 }
