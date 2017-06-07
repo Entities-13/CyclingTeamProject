@@ -17,7 +17,7 @@ Create a project of your choice and implement it using Code First approach with 
 
 ## General Requirements
 
-- Use Code First approach
+- + Use Code First approach
 - Use Entity Framework
 - Use SQL Server 2016
 - At least five tables in the SQL Server database
