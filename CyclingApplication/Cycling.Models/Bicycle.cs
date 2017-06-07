@@ -19,6 +19,7 @@ namespace Cycling.Models
         public string Brand { get; set; }
 
         [MaxLength(40)]
+        [Required]
         public string Model { get; set; }
 
         public virtual ICollection<Cyclist> Cyclist

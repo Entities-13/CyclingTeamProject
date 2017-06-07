@@ -15,9 +15,11 @@ namespace Cycling.Models
         public int Id { get; set; }
 
         [MaxLength(40)]
+        [Required]
         public string FirstName { get; set; }
 
         [MaxLength(40)]
+        [Required]
         public string LastName { get; set; }
 
         public int Age { get; set; }

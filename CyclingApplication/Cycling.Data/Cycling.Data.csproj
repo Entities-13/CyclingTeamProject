@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201706071524421_string-max-added.Designer.cs">
       <DependentUpon>201706071524421_string-max-added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706071532160_restrictions-added.cs" />
+    <Compile Include="Migrations\201706071532160_restrictions-added.Designer.cs">
+      <DependentUpon>201706071532160_restrictions-added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706071524421_string-max-added.resx">
       <DependentUpon>201706071524421_string-max-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071532160_restrictions-added.resx">
+      <DependentUpon>201706071532160_restrictions-added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
