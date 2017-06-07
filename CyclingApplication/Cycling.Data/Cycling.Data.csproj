@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201706061815411_Max Length atrributes added.Designer.cs">
       <DependentUpon>201706061815411_Max Length atrributes added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706070723596_virtual idbset added.cs" />
+    <Compile Include="Migrations\201706070723596_virtual idbset added.Designer.cs">
+      <DependentUpon>201706070723596_virtual idbset added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706061815411_Max Length atrributes added.resx">
       <DependentUpon>201706061815411_Max Length atrributes added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706070723596_virtual idbset added.resx">
+      <DependentUpon>201706070723596_virtual idbset added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
