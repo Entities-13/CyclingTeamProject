@@ -35,6 +35,14 @@ namespace Cycling.Web.Factories
             this.CurrentTeam = team;
         }
 
+        // added for bulk insertion of data 
+        public CreateCyclist(IEnumerable<Cyclist> cyclists)
+        {
+            this.Cyclists = cyclists;
+        }
+
+        public IEnumerable<Cyclist> Cyclists { get; set; }
+
         public string FirstName
         {
             get
@@ -129,7 +137,7 @@ namespace Cycling.Web.Factories
             }
         }
 
-        public void Create()
+        public void CreateOne()
         {
             var cyclist = new Cyclist()
             {
@@ -145,6 +153,19 @@ namespace Cycling.Web.Factories
             using (var dbContext = new CyclingDbContext())
             {
                 dbContext.Cyclists.Add(cyclist);
+
+                dbContext.SaveChanges();
+            }
+        }
+
+        public void CreateMany()
+        {
+            using (var dbContext = new CyclingDbContext())
+            {
+                foreach (var item in this.Cyclists)
+                {
+                    dbContext.Cyclists.Add(item);
+                }
 
                 dbContext.SaveChanges();
             }

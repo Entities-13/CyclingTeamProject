@@ -38,7 +38,7 @@ namespace Cycling.Web.Common
 
         public static void CheckIfStringLengthIsValid(string text, int max, string message = null)
         {
-            if (text.Length < min || max < text.Length)
+            if (max < text.Length)
             {
                 throw new IndexOutOfRangeException(message);
             }

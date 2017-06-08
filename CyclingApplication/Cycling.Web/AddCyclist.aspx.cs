@@ -22,9 +22,8 @@ namespace Cycling.Web
                 int.Parse(this.TextBoxGiro.Text), int.Parse(this.TextBoxVuelta.Text),
                 this.TextBoxTeam.Text);
 
-            cyclist.Create();
-            // TODO: must be fixed after new cyclist creation, grid should display new rider automatically 
-            // not like now with manual reload of the page 
+            cyclist.CreateOne();
+
             Response.Redirect("Cyclists.aspx");
         }
     }

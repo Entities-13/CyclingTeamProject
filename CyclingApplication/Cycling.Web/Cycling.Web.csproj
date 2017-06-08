@@ -135,6 +135,7 @@
     </Compile>
     <Compile Include="Common\Contracts\ILoadData.cs" />
     <Compile Include="Common\LoadDataFromJson.cs" />
+    <Compile Include="Common\Validator.cs" />
     <Compile Include="Cyclists.aspx.cs">
       <DependentUpon>Cyclists.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
