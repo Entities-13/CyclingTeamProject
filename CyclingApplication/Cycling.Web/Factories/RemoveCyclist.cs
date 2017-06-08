@@ -44,6 +44,7 @@ namespace Cycling.Web.Factories
             }
         }
 
+        // TODO: maybe implement remove by Id not by first and last name
         public void Remove()
         {
             using (var dbContext = new CyclingDbContext())
