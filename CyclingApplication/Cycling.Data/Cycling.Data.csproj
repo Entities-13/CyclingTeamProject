@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContext.cs" />
+    <Compile Include="Migrations\201706081523452_fluent-api.cs" />
+    <Compile Include="Migrations\201706081523452_fluent-api.Designer.cs">
+      <DependentUpon>201706081523452_fluent-api.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +66,11 @@
       <Project>{268efd88-3f15-40de-af76-4b7a60d4b482}</Project>
       <Name>Cycling.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706081523452_fluent-api.resx">
+      <DependentUpon>201706081523452_fluent-api.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
