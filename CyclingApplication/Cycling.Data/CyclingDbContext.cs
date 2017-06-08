@@ -1,5 +1,6 @@
 ﻿using Cycling.Models;
 using System.Data.Entity;
+using System;
 
 namespace Cycling.Data
 {
@@ -17,5 +18,25 @@ namespace Cycling.Data
         public virtual IDbSet<Wheel> Wheels { get; set; }
 
         public virtual IDbSet<Tire> Tires { get; set; }
+
+        public virtual IDbSet<Town> Towns { get; set; }
+
+        public virtual IDbSet<Address> Addresses { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            this.OnTownModelCreating(modelBuilder);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        private void OnTownModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Town>().HasKey(town => town.Id);
+
+            modelBuilder.Entity<Town>().HasRequired(town => town.Name);
+
+            modelBuilder.Entity<Town>().Property(town=>town.Name).HasMaxLength(40);
+        }
     }
 }
