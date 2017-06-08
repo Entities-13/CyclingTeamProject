@@ -1,13 +1,11 @@
 ﻿using Cycling.Data;
 using Cycling.Web.Common;
-using System;
-using System.Collections.Generic;
+using Cycling.Web.Contracts;
 using System.Linq;
-using System.Web;
 
 namespace Cycling.Web.Factories
 {
-    public class UpdateCyclist
+    public class UpdateCyclist : IUpdateCyclist
     {
         private string firstName;
         private string lastName;
