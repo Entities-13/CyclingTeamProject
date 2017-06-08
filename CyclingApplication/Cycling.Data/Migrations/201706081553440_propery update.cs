@@ -3,16 +3,16 @@ namespace Cycling.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fluentapi : DbMigration
+    public partial class properyupdate : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Towns", "Name", c => c.String(nullable: false, maxLength: 40));
+            AddColumn("dbo.Towns", "Population", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Towns", "Name", c => c.String());
+            DropColumn("dbo.Towns", "Population");
         }
     }
 }

@@ -37,6 +37,8 @@ namespace Cycling.Data
             modelBuilder.Entity<Town>().Property(town => town.Name).IsRequired();
 
             modelBuilder.Entity<Town>().Property(town => town.Name).HasMaxLength(40);
+
+            modelBuilder.Entity<Town>().Property(town => town.Population).IsOptional();
         }
     }
 }

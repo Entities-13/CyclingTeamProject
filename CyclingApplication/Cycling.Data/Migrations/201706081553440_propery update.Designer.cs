@@ -7,13 +7,13 @@ namespace Cycling.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class fluentapi : IMigrationMetadata
+    public sealed partial class properyupdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fluentapi));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(properyupdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706081523452_fluent-api"; }
+            get { return "201706081553440_propery update"; }
         }
         
         string IMigrationMetadata.Source

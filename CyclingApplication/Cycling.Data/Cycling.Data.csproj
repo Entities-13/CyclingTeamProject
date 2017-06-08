@@ -50,9 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContext.cs" />
-    <Compile Include="Migrations\201706081523452_fluent-api.cs" />
-    <Compile Include="Migrations\201706081523452_fluent-api.Designer.cs">
-      <DependentUpon>201706081523452_fluent-api.cs</DependentUpon>
+    <Compile Include="Migrations\201706081553440_propery update.cs" />
+    <Compile Include="Migrations\201706081553440_propery update.Designer.cs">
+      <DependentUpon>201706081553440_propery update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081558407_population-made-nullable.cs" />
+    <Compile Include="Migrations\201706081558407_population-made-nullable.Designer.cs">
+      <DependentUpon>201706081558407_population-made-nullable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,8 +72,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706081523452_fluent-api.resx">
-      <DependentUpon>201706081523452_fluent-api.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706081553440_propery update.resx">
+      <DependentUpon>201706081553440_propery update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081558407_population-made-nullable.resx">
+      <DependentUpon>201706081558407_population-made-nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
