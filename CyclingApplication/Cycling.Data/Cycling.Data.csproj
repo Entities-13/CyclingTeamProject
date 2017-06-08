@@ -50,19 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContext.cs" />
-    <Compile Include="Migrations\201706071518182_wheels-and-tyres-models-added.cs" />
-    <Compile Include="Migrations\201706071518182_wheels-and-tyres-models-added.Designer.cs">
-      <DependentUpon>201706071518182_wheels-and-tyres-models-added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706071524421_string-max-added.cs" />
-    <Compile Include="Migrations\201706071524421_string-max-added.Designer.cs">
-      <DependentUpon>201706071524421_string-max-added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706071532160_restrictions-added.cs" />
-    <Compile Include="Migrations\201706071532160_restrictions-added.Designer.cs">
-      <DependentUpon>201706071532160_restrictions-added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,17 +61,6 @@
       <Project>{268efd88-3f15-40de-af76-4b7a60d4b482}</Project>
       <Name>Cycling.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706071518182_wheels-and-tyres-models-added.resx">
-      <DependentUpon>201706071518182_wheels-and-tyres-models-added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706071524421_string-max-added.resx">
-      <DependentUpon>201706071524421_string-max-added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706071532160_restrictions-added.resx">
-      <DependentUpon>201706071532160_restrictions-added.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

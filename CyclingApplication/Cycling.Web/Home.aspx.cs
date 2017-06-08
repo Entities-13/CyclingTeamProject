@@ -31,6 +31,8 @@ namespace Cycling.Web
 
             var cyclistsFactory = new CreateCyclist(cyclists);
             cyclistsFactory.CreateMany();
+
+            Response.Redirect("Cyclists.aspx");
         }
     }
 }

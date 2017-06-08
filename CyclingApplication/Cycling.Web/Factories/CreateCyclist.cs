@@ -140,7 +140,7 @@ namespace Cycling.Web.Factories
 
         public void CreateOne()
         {
-            var cyclist = new Cyclist()
+            var cyclist1 = new Cyclist()
             {
                 FirstName = this.firstName,
                 LastName = this.lastName,
@@ -153,7 +153,7 @@ namespace Cycling.Web.Factories
 
             using (var dbContext = new CyclingDbContext())
             {
-                dbContext.Cyclists.Add(cyclist);
+                dbContext.Cyclists.Add(cyclist1);
 
                 dbContext.SaveChanges();
             }
