@@ -1,6 +1,7 @@
 ﻿using Cycling.Data;
 using Cycling.Models;
 using Cycling.Web.Common;
+using Cycling.Web.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Web;
 
 namespace Cycling.Web.Factories
 {
-    public class CreateCyclist
+    public class CreateCyclist : ICreateCyclist
     {
         private const int MAX_STRING_LENGTH = 40;
         private const string INVALID_INT_MSG = "Can not be NULL";
