@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DeleteCyclist.aspx" />
+    <Content Include="UpdateCyclistPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@
     <Compile Include="Contracts\ICreateCyclist.cs" />
     <Compile Include="Contracts\IRemoveCyclist.cs" />
     <Compile Include="Factories\RemoveCyclist.cs" />
+    <Compile Include="Factories\UpdateCyclist.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -170,6 +172,13 @@
     </Compile>
     <Compile Include="DeleteCyclist.aspx.designer.cs">
       <DependentUpon>DeleteCyclist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCyclistPage.aspx.cs">
+      <DependentUpon>UpdateCyclistPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateCyclistPage.aspx.designer.cs">
+      <DependentUpon>UpdateCyclistPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
