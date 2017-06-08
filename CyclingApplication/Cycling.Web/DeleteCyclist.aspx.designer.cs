@@ -10,7 +10,7 @@
 namespace Cycling.Web {
     
     
-    public partial class RemoveCyclist {
+    public partial class DeleteCyclist {
         
         /// <summary>
         /// LabelFirstName control.

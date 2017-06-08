@@ -11,12 +11,6 @@ namespace Cycling.Web.Factories
 {
     public class CreateCyclist : ICreateCyclist
     {
-        private const int MAX_STRING_LENGTH = 40;
-        private const string INVALID_INT_MSG = "Can not be NULL";
-        private const string INVALID_FIRST_NAME_MSG = "Invalid First Name";
-        private const string INVALID_LAST_NAME_MSG = "Invalid Last Name";
-        private const string INVALID_TEAM_MSG = "Invalid Team";
-
         private string firstName;
         private string lastName;
         private int age;
@@ -52,8 +46,8 @@ namespace Cycling.Web.Factories
             }
             set
             {
-                Validator.CheckIfStringLengthIsValid(value, MAX_STRING_LENGTH, INVALID_FIRST_NAME_MSG);
-                Validator.CheckIfStringIsNullOrEmpty(value, INVALID_FIRST_NAME_MSG);
+                Validator.CheckIfStringLengthIsValid(value, Constants.MAX_STRING_LENGTH, Constants.INVALID_FIRST_NAME_MSG);
+                Validator.CheckIfStringIsNullOrEmpty(value, Constants.INVALID_FIRST_NAME_MSG);
                 firstName = value;
             }
         }
@@ -66,8 +60,8 @@ namespace Cycling.Web.Factories
             }
             set
             {
-                Validator.CheckIfStringLengthIsValid(value, MAX_STRING_LENGTH, INVALID_LAST_NAME_MSG);
-                Validator.CheckIfStringIsNullOrEmpty(value, INVALID_LAST_NAME_MSG);
+                Validator.CheckIfStringLengthIsValid(value, Constants.MAX_STRING_LENGTH, Constants.INVALID_LAST_NAME_MSG);
+                Validator.CheckIfStringIsNullOrEmpty(value, Constants.INVALID_LAST_NAME_MSG);
                 lastName = value;
             }
         }
@@ -80,7 +74,7 @@ namespace Cycling.Web.Factories
             }
             set
             {
-                Validator.CheckIfNull(value, INVALID_INT_MSG);
+                Validator.CheckIfNull(value, Constants.INVALID_INT_MSG);
                 age = value;
             }
         }
@@ -93,7 +87,7 @@ namespace Cycling.Web.Factories
             }
             set
             {
-                Validator.CheckIfNull(value, INVALID_INT_MSG);
+                Validator.CheckIfNull(value, Constants.INVALID_INT_MSG);
                 tourDeFranceWins = value;
             }
         }
@@ -106,7 +100,7 @@ namespace Cycling.Web.Factories
             }
             set
             {
-                Validator.CheckIfNull(value, INVALID_INT_MSG);
+                Validator.CheckIfNull(value, Constants.INVALID_INT_MSG);
                 giroDItaliaWins = value;
             }
         }
@@ -119,7 +113,7 @@ namespace Cycling.Web.Factories
             }
             set
             {
-                Validator.CheckIfNull(value, INVALID_INT_MSG);
+                Validator.CheckIfNull(value, Constants.INVALID_INT_MSG);
                 vueltaWins = value;
             }
         }
@@ -132,15 +126,15 @@ namespace Cycling.Web.Factories
             }
             set
             {
-                Validator.CheckIfStringLengthIsValid(value, MAX_STRING_LENGTH + 10, INVALID_TEAM_MSG);
-                Validator.CheckIfStringIsNullOrEmpty(value, INVALID_TEAM_MSG);
+                Validator.CheckIfStringLengthIsValid(value, Constants.MAX_STRING_LENGTH + 10, Constants.INVALID_TEAM_MSG);
+                Validator.CheckIfStringIsNullOrEmpty(value, Constants.INVALID_TEAM_MSG);
                 currentTeam = value;
             }
         }
 
         public void CreateOne()
         {
-            var cyclist1 = new Cyclist()
+            var cyclistNew = new Cyclist()
             {
                 FirstName = this.firstName,
                 LastName = this.lastName,
@@ -153,7 +147,7 @@ namespace Cycling.Web.Factories
 
             using (var dbContext = new CyclingDbContext())
             {
-                dbContext.Cyclists.Add(cyclist1);
+                dbContext.Cyclists.Add(cyclistNew);
 
                 dbContext.SaveChanges();
             }

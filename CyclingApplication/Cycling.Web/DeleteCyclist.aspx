@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Remove Cyclist" Language="C#" MasterPageFile="~/Cycling.Master" AutoEventWireup="true" CodeBehind="RemoveCyclist.aspx.cs" Inherits="Cycling.Web.RemoveCyclist" %>
+﻿<%@ Page Title="Remove Cyclist" Language="C#" MasterPageFile="~/Cycling.Master" AutoEventWireup="true" CodeBehind="DeleteCyclist.aspx.cs" Inherits="Cycling.Web.DeleteCyclist" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderCycling" runat="server">
