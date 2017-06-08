@@ -50,6 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContext.cs" />
+    <Compile Include="Migrations\201706081515524_add Toure de France.cs" />
+    <Compile Include="Migrations\201706081515524_add Toure de France.Designer.cs">
+      <DependentUpon>201706081515524_add Toure de France.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081527146_adding Giro Di Italia.cs" />
+    <Compile Include="Migrations\201706081527146_adding Giro Di Italia.Designer.cs">
+      <DependentUpon>201706081527146_adding Giro Di Italia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +70,14 @@
       <Project>{268efd88-3f15-40de-af76-4b7a60d4b482}</Project>
       <Name>Cycling.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706081515524_add Toure de France.resx">
+      <DependentUpon>201706081515524_add Toure de France.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081527146_adding Giro Di Italia.resx">
+      <DependentUpon>201706081527146_adding Giro Di Italia.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

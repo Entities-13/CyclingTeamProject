@@ -17,5 +17,9 @@ namespace Cycling.Data
         public virtual IDbSet<Wheel> Wheels { get; set; }
 
         public virtual IDbSet<Tire> Tires { get; set; }
+
+        public virtual IDbSet<TourDeFrance> TourDeFrance { get; set; }
+        
+        public virtual IDbSet<GiroDItalia> GiroDItalia { get; set; }
     }
 }

@@ -50,8 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bicycle.cs" />
+    <Compile Include="CiclingTour.cs" />
     <Compile Include="Cyclist.cs" />
+    <Compile Include="GiroDItalia.cs" />
     <Compile Include="Tire.cs" />
+    <Compile Include="TourDeFrance.cs" />
     <Compile Include="Wheel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
