@@ -36,7 +36,7 @@ namespace Cycling.Web.Common
             }
         }
 
-        public static void CheckIfStringLengthIsValid(string text, int max, int min = 0, string message = null)
+        public static void CheckIfStringLengthIsValid(string text, int max, string message = null)
         {
             if (text.Length < min || max < text.Length)
             {

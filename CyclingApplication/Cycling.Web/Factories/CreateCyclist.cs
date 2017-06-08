@@ -1,5 +1,6 @@
 ﻿using Cycling.Data;
 using Cycling.Models;
+using Cycling.Web.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,12 @@ namespace Cycling.Web.Factories
 {
     public class CreateCyclist
     {
+        private const int MAX_STRING_LENGTH = 40;
+        private const string INVALID_INT_MSG = "Can not be NULL";
+        private const string INVALID_FIRST_NAME_MSG = "Invalid First Name";
+        private const string INVALID_LAST_NAME_MSG = "Invalid Last Name";
+        private const string INVALID_TEAM_MSG = "Invalid Team";
+
         private string firstName;
         private string lastName;
         private int age;
@@ -30,44 +37,96 @@ namespace Cycling.Web.Factories
 
         public string FirstName
         {
-            get { return firstName; }
-            set { firstName = value; }
+            get
+            {
+                return firstName;
+            }
+            set
+            {
+                Validator.CheckIfStringLengthIsValid(value, MAX_STRING_LENGTH, INVALID_FIRST_NAME_MSG);
+                Validator.CheckIfStringIsNullOrEmpty(value, INVALID_FIRST_NAME_MSG);
+                firstName = value;
+            }
         }
 
         public string LastName
         {
-            get { return lastName; }
-            set { lastName = value; }
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                Validator.CheckIfStringLengthIsValid(value, MAX_STRING_LENGTH, INVALID_LAST_NAME_MSG);
+                Validator.CheckIfStringIsNullOrEmpty(value, INVALID_LAST_NAME_MSG);
+                lastName = value;
+            }
         }
 
         public int Age
         {
-            get { return age; }
-            set { age = value; }
+            get
+            {
+                return age;
+            }
+            set
+            {
+                Validator.CheckIfNull(value, INVALID_INT_MSG);
+                age = value;
+            }
         }
 
         public int TourDeFranceWins
         {
-            get { return tourDeFranceWins; }
-            set { tourDeFranceWins = value; }
+            get
+            {
+                return tourDeFranceWins;
+            }
+            set
+            {
+                Validator.CheckIfNull(value, INVALID_INT_MSG);
+                tourDeFranceWins = value;
+            }
         }
 
         public int GiroDItaliaWins
         {
-            get { return giroDItaliaWins; }
-            set { giroDItaliaWins = value; }
+            get
+            {
+                return giroDItaliaWins;
+            }
+            set
+            {
+                Validator.CheckIfNull(value, INVALID_INT_MSG);
+                giroDItaliaWins = value;
+            }
         }
 
         public int VueltaWins
         {
-            get { return vueltaWins; }
-            set { vueltaWins = value; }
+            get
+            {
+                return vueltaWins;
+            }
+            set
+            {
+                Validator.CheckIfNull(value, INVALID_INT_MSG);
+                vueltaWins = value;
+            }
         }
 
         public string CurrentTeam
         {
-            get { return currentTeam; }
-            set { currentTeam = value; }
+            get
+            {
+                return currentTeam;
+            }
+            set
+            {
+                Validator.CheckIfStringLengthIsValid(value, MAX_STRING_LENGTH + 10, INVALID_TEAM_MSG);
+                Validator.CheckIfStringIsNullOrEmpty(value, INVALID_TEAM_MSG);
+                currentTeam = value;
+            }
         }
 
         public void Create()
