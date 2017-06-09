@@ -17,6 +17,8 @@
             <ul class="nav nav-pills nav-justified">
                 <li role="presentation" class="active"><a href="Home.aspx">Home</a></li>
                 <li role="presentation"><a href="AddCyclist.aspx">Add New Cyclist</a></li>
+                <li role="presentation"><a href="UpdateCyclistPage.aspx">Update Cyclist</a></li>
+                <li role="presentation"><a href="SearchForCyclist.aspx">Find Cyclist</a></li>
                 <li role="presentation"><a href="DeleteCyclist.aspx">Remove Cyclist</a></li>
                 <li role="presentation"><a href="Cyclists.aspx">Cyclists Statistics</a></li>
             </ul>

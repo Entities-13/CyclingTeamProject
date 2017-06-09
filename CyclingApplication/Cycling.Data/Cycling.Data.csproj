@@ -50,13 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContext.cs" />
-    <Compile Include="Migrations\201706081515524_add Toure de France.cs" />
-    <Compile Include="Migrations\201706081515524_add Toure de France.Designer.cs">
-      <DependentUpon>201706081515524_add Toure de France.cs</DependentUpon>
+    <Compile Include="Migrations\201706081553440_propery update.cs" />
+    <Compile Include="Migrations\201706081553440_propery update.Designer.cs">
+      <DependentUpon>201706081553440_propery update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706081527146_adding Giro Di Italia.cs" />
-    <Compile Include="Migrations\201706081527146_adding Giro Di Italia.Designer.cs">
-      <DependentUpon>201706081527146_adding Giro Di Italia.cs</DependentUpon>
+    <Compile Include="Migrations\201706081558407_population-made-nullable.cs" />
+    <Compile Include="Migrations\201706081558407_population-made-nullable.Designer.cs">
+      <DependentUpon>201706081558407_population-made-nullable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,11 +72,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706081515524_add Toure de France.resx">
-      <DependentUpon>201706081515524_add Toure de France.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706081553440_propery update.resx">
+      <DependentUpon>201706081553440_propery update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706081527146_adding Giro Di Italia.resx">
-      <DependentUpon>201706081527146_adding Giro Di Italia.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706081558407_population-made-nullable.resx">
+      <DependentUpon>201706081558407_population-made-nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -49,12 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
     <Compile Include="Bicycle.cs" />
-    <Compile Include="CiclingTour.cs" />
     <Compile Include="Cyclist.cs" />
-    <Compile Include="GiroDItalia.cs" />
     <Compile Include="Tire.cs" />
-    <Compile Include="TourDeFrance.cs" />
+    <Compile Include="Town.cs" />
     <Compile Include="Wheel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
