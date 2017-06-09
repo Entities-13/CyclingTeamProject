@@ -12,11 +12,11 @@
             <asp:TextBox ID="TextBoxId" runat="server"></asp:TextBox>
         </div>
         <br />
-        <asp:Button ID="ButtonUpdateCyclist" runat="server" Text="Update Cyclist Info" CssClass="btn btn-warning" />
+        <asp:Button ID="ButtonDisplayCyclist" runat="server" Text="Display Cyclist Info" CssClass="btn btn-warning" OnClick="ButtonDisplayCyclist_Click" />
         <br />
         <br />
         <div class="well well-sm">
-            <asp:Label ID="LabelResult" runat="server" ></asp:Label>
+            <asp:GridView ID="GridViewResult" runat="server"></asp:GridView>    
         </div>
     </div>
 </asp:Content>

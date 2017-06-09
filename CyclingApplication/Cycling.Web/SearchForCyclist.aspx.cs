@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cycling.Data;
+using Cycling.Web.Factories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,16 @@ namespace Cycling.Web
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ButtonDisplayCyclist_Click(object sender, EventArgs e)
+        {
+            var findCyclist = new FindCyclist(int.Parse(this.TextBoxId.Text));
+
+            var cyclistToDisplay = findCyclist.Find();
+
+            this.GridViewResult.DataSource = cyclistToDisplay;
+            this.GridViewResult.DataBind();
         }
     }
 }
