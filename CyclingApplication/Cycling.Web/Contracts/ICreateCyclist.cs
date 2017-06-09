@@ -7,7 +7,7 @@ namespace Cycling.Web.Contracts
     {
         int Age { get; set; }
         string CurrentTeam { get; set; }
-        IEnumerable<Cyclist> Cyclists { get; set; }
+        ICollection<Cyclist> Cyclists { get; set; }
         string FirstName { get; set; }
         int GiroDItaliaWins { get; set; }
         string LastName { get; set; }

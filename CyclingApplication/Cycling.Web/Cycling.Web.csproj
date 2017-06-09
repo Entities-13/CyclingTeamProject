@@ -113,7 +113,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Common\JsonData\CyclistsData.json" />
+    <Content Include="Common\DataToImport\CyclistsData.json" />
     <Content Include="Cycling.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -136,7 +136,8 @@
     </Compile>
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\Contracts\ILoadData.cs" />
-    <Compile Include="Common\LoadDataFromJson.cs" />
+    <Compile Include="Common\LoadData.cs" />
+    <Compile Include="Common\TourData.cs" />
     <Compile Include="Common\Validator.cs" />
     <Compile Include="Cyclists.aspx.cs">
       <DependentUpon>Cyclists.aspx</DependentUpon>

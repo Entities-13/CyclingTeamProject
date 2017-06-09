@@ -31,12 +31,12 @@ namespace Cycling.Web.Factories
         }
 
         // added for bulk insertion of data 
-        public CreateCyclist(IEnumerable<Cyclist> cyclists)
+        public CreateCyclist(ICollection<Cyclist> cyclists)
         {
             this.Cyclists = cyclists;
         }
 
-        public IEnumerable<Cyclist> Cyclists { get; set; }
+        public ICollection<Cyclist> Cyclists { get; set; }
 
         public string FirstName
         {
@@ -157,9 +157,17 @@ namespace Cycling.Web.Factories
         {
             using (var dbContext = new CyclingDbContext())
             {
+
+                var db = dbContext.Cyclists.ToList();
                 foreach (var item in this.Cyclists)
                 {
-                    dbContext.Cyclists.Add(item);
+                    if (!db.Exists(x =>
+                                x.FirstName.ToLower() != item.FirstName.ToLower() &&
+                                x.LastName.ToLower() != item.LastName.ToLower()))
+                    {
+                        dbContext.Cyclists.Add(item);
+                    }
+
                 }
 
                 dbContext.SaveChanges();

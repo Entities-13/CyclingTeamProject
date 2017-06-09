@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Hosting;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml;
 
 namespace Cycling.Web
 {
@@ -24,15 +25,20 @@ namespace Cycling.Web
 
         protected void ButtonAddJsonData_Click(object sender, EventArgs e)
         {
-            string filePath = HttpContext.Current.Server.MapPath("~/Common/JsonData/CyclistsData.json");
+            string filePathJson = HttpContext.Current.Server.MapPath("~/Common/DataToImport/CyclistsData.json");
 
-            var cyclistsFromJson = new LoadDataFromJson();
-            var cyclists = cyclistsFromJson.LoadData(filePath);
+            var loadCyclists = new LoadData();
+            var cyclists = loadCyclists.LoadDataFromJson(filePathJson);
 
             var cyclistsFactory = new CreateCyclist(cyclists);
             cyclistsFactory.CreateMany();
 
             Response.Redirect("Cyclists.aspx");
+
+            //getting xml
+            string filePathXml = HttpContext.Current.Server.MapPath("~/Common/DataToImport/France2.xml");
+            var franceTour = new List<TourData>();
+            loadCyclists.GetListOfWinner(XmlReader.Create(filePathXml), franceTour);
         }
     }
 }
