@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Cycling.Models.PostgreSQL;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cycling.Data.Postgre
 {
@@ -14,6 +10,8 @@ namespace Cycling.Data.Postgre
         {
         }
 
+        public virtual IDbSet<Championship> Championships { get; set; }
 
+        public virtual IDbSet<Sponsor> Sponsors { get; set; }
     }
 }
