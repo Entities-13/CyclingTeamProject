@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycling.App.Tests", "Cyclin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycling.Data.Postgre", "Cycling.Data.Postgre\Cycling.Data.Postgre.csproj", "{0D283310-84C0-479C-87ED-1064E807F133}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycling.Data.SQLite", "Cycling.Data.SQLite\Cycling.Data.SQLite.csproj", "{273718E3-899B-4C64-97E2-3CA7DC9E4652}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0D283310-84C0-479C-87ED-1064E807F133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D283310-84C0-479C-87ED-1064E807F133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D283310-84C0-479C-87ED-1064E807F133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273718E3-899B-4C64-97E2-3CA7DC9E4652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273718E3-899B-4C64-97E2-3CA7DC9E4652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273718E3-899B-4C64-97E2-3CA7DC9E4652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273718E3-899B-4C64-97E2-3CA7DC9E4652}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

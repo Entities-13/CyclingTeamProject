@@ -58,6 +58,8 @@
     <Compile Include="MSSQL\Town.cs" />
     <Compile Include="MSSQL\Wheel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLite\CyclingDestination.cs" />
+    <Compile Include="SQLite\CyclingInstructor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
