@@ -162,8 +162,8 @@ namespace Cycling.Web.Factories
                 foreach (var item in this.Cyclists)
                 {
                     if (!db.Exists(x =>
-                                x.FirstName.ToLower() != item.FirstName.ToLower() &&
-                                x.LastName.ToLower() != item.LastName.ToLower()))
+                                x.FirstName.ToLower() == item.FirstName.ToLower() &&
+                                x.LastName.ToLower() == item.LastName.ToLower()))
                     {
                         dbContext.Cyclists.Add(item);
                     }
