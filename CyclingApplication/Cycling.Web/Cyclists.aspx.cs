@@ -1,4 +1,6 @@
-﻿using Cycling.Web.Factories;
+﻿using Cycling.Data;
+using Cycling.Models;
+using Cycling.Web.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,13 @@ namespace Cycling.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var cyclists = new DisplayCyclists();
 
+            if (!Page.IsPostBack)
+            {
+                this.GridViewCyclists.DataSource = cyclists.Display();
+                this.GridViewCyclists.DataBind();
+            }
         }
     }
 }

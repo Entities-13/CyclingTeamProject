@@ -19,7 +19,6 @@ namespace Cycling.Web
         protected void ButtonDisplayCyclist_Click(object sender, EventArgs e)
         {
             var findCyclist = new FindCyclist(int.Parse(this.TextBoxId.Text));
-
             var cyclistToDisplay = findCyclist.Find();
 
             this.GridViewResult.DataSource = cyclistToDisplay;

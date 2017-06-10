@@ -159,6 +159,7 @@
     <Compile Include="Contracts\ICreateCyclist.cs" />
     <Compile Include="Contracts\IRemoveCyclist.cs" />
     <Compile Include="Contracts\IUpdateCyclist.cs" />
+    <Compile Include="Factories\DisplayCyclists.cs" />
     <Compile Include="Factories\FindCyclist.cs" />
     <Compile Include="Contracts\IFindCyclist.cs" />
     <Compile Include="Factories\RemoveCyclist.cs" />
