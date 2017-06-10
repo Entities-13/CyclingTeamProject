@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Cycling.Models
+namespace Cycling.Models.MSSQL
 {
     public class Bicycle
     {

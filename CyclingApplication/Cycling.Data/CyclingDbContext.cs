@@ -1,6 +1,5 @@
-﻿using Cycling.Models;
+﻿using Cycling.Models.MSSQL;
 using System.Data.Entity;
-using System;
 
 namespace Cycling.Data
 {

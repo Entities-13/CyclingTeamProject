@@ -1,7 +1,7 @@
-﻿using System;
-using Cycling.Models;
+﻿using Cycling.Models.MSSQL;
 using Cycling.Web.Common.Contracts;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;

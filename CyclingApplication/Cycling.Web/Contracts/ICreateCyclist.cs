@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Cycling.Models;
+﻿using Cycling.Models.MSSQL;
+using System.Collections.Generic;
 
 namespace Cycling.Web.Contracts
 {

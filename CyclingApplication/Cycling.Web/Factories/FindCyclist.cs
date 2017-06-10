@@ -1,5 +1,5 @@
 ﻿using Cycling.Data;
-using Cycling.Models;
+using Cycling.Models.MSSQL;
 using Cycling.Web.Contracts;
 using System.Collections.Generic;
 using System.Linq;

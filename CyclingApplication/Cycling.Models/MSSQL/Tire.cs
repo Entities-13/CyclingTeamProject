@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Cycling.Models
+namespace Cycling.Models.MSSQL
 {
     public class Tire
     {
