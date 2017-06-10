@@ -52,6 +52,8 @@
     <Compile Include="Address.cs" />
     <Compile Include="Bicycle.cs" />
     <Compile Include="Cyclist.cs" />
+    <Compile Include="PostgreSQL\Championship.cs" />
+    <Compile Include="PostgreSQL\Sponsor.cs" />
     <Compile Include="Tire.cs" />
     <Compile Include="Town.cs" />
     <Compile Include="Wheel.cs" />
@@ -60,6 +62,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MSSQL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
