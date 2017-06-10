@@ -72,6 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContextSQLite.cs" />
+    <Compile Include="Migrations\201706102022018_sqllite initial.cs" />
+    <Compile Include="Migrations\201706102022018_sqllite initial.Designer.cs">
+      <DependentUpon>201706102022018_sqllite initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +88,11 @@
       <Project>{268efd88-3f15-40de-af76-4b7a60d4b482}</Project>
       <Name>Cycling.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706102022018_sqllite initial.resx">
+      <DependentUpon>201706102022018_sqllite initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.1\build\net451\System.Data.SQLite.Core.targets')" />
