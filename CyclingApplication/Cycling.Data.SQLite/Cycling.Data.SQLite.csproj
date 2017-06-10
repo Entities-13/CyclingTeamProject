@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201706102022018_sqllite initial.Designer.cs">
       <DependentUpon>201706102022018_sqllite initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706102029469_init-second.cs" />
+    <Compile Include="Migrations\201706102029469_init-second.Designer.cs">
+      <DependentUpon>201706102029469_init-second.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,6 +96,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706102022018_sqllite initial.resx">
       <DependentUpon>201706102022018_sqllite initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706102029469_init-second.resx">
+      <DependentUpon>201706102029469_init-second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
