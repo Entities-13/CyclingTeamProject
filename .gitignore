@@ -288,6 +288,6 @@ __pycache__/
 *.xsd.cs
 
 # ignoring config string
-Web.config
-App.config
-CyclingApplication/Cycling.Web/Web.config
+# Web.config
+# App.config
+# CyclingApplication/Cycling.Web/Web.config
