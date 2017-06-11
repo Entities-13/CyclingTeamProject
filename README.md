@@ -39,5 +39,5 @@ Create a project of your choice and implement it using Code First approach with 
 ## Optional Requirements (Bonus points)
 
 * Unit test the application (think about how and use the techniques from the previous courses in Telerik Academy and the [Design Patterns course](http://telerikacademy.com/Courses/Courses/Details/431))
-* You could use Repository pattern or Services of your choice or use pure Entity Framework and DbContext (research the options and choose your preferable way to do it)
+* [x] You could use Repository pattern or Services of your choice or use pure Entity Framework and DbContext (research the options and choose your preferable way to do it)
 * Completely finished and working project is not a requirement but it will be considered a plus
