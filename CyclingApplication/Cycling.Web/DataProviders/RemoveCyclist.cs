@@ -1,4 +1,5 @@
 ﻿using Cycling.Data;
+using Cycling.Data.Common;
 using Cycling.Web.Common;
 using Cycling.Web.Contracts;
 using System.Linq;
@@ -47,17 +48,11 @@ namespace Cycling.Web.DataProviders
         // TODO: maybe implement remove by Id not by first and last name
         public void Remove()
         {
-            using (var dbContext = new CyclingDbContext())
+            using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
             {
-                var cyclistsToRemove = dbContext.Cyclists.Where(x => x.FirstName.Contains(this.FirstName)
-                                && x.LastName.Contains(this.LastName)).ToList();
+                unitOfWork.CyclingExtendedRepository.RemoveByFirstAndLastName(this.FirstName, this.LastName);
 
-                foreach (var cyclist in cyclistsToRemove)
-                {
-                    dbContext.Cyclists.Remove(cyclist);
-                }
- 
-                dbContext.SaveChanges();
+                unitOfWork.Commit();
             }
         }
     }

@@ -49,8 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IEfExtendedRepository.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Contracts\IUnitOfWork.cs" />
+    <Compile Include="Repositories\EfExtendedRepository.cs" />
     <Compile Include="Repositories\EfRepository.cs" />
     <Compile Include="EfUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

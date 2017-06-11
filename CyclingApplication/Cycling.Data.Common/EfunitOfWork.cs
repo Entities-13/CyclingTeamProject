@@ -29,6 +29,7 @@ namespace Cycling.Data.Common
             this.SponsorsRepository = new EfRepository<Sponsor>(this.dbContext);
             this.CyclingDestinationsRepository = new EfRepository<CyclingDestination>(this.dbContext);
             this.CyclingInstructorsRepository = new EfRepository<CyclingInstructor>(this.dbContext);
+            this.CyclingExtendedRepository = new EfExtendedRepository(this.dbContext);
         }
 
         public EfRepository<Cyclist> CyclistsRepository { get; private set; }
@@ -41,7 +42,7 @@ namespace Cycling.Data.Common
         public EfRepository<Sponsor> SponsorsRepository { get; private set; }
         public EfRepository<CyclingDestination> CyclingDestinationsRepository { get; private set; }
         public EfRepository<CyclingInstructor> CyclingInstructorsRepository { get; private set; }
-
+        public IEfExtendedRepository CyclingExtendedRepository { get; private set; }
 
         public void Commit()
         {
