@@ -1,4 +1,5 @@
 ﻿using Cycling.Data;
+using Cycling.Data.Common;
 using Cycling.Data.SQLite;
 using Cycling.Models;
 using Cycling.Models.SQLite;
@@ -35,7 +36,7 @@ namespace Cycling.Web
             var cyclistsFactory = new CreateCyclist(cyclists);
             cyclistsFactory.CreateMany();
 
-            // this is for SQLite 
+            // this is for SQLite should be moved from here
 
             var destination = new CyclingDestination();
             destination.Name = "Somewhere in Pirin";
@@ -45,13 +46,14 @@ namespace Cycling.Web
             instructor.Name = "Nikodim Nikodimov";
             instructor.Country = "Bulgaria";
 
-            using (var dbContext = new CyclingDbContextSQLite())
+            using (var unitOfWork = new EfUnitOfWork(new CyclingDbContextSQLite()))
             {
-                dbContext.CyclingDestination.Add(destination);
-                dbContext.CyclingInstructors.Add(instructor);
+                unitOfWork.CyclingDestinationsRepository.Add(destination);
+                unitOfWork.CyclingInstructorsRepository.Add(instructor);
 
-                dbContext.SaveChanges();
+                unitOfWork.Commit();
             }
+
             //
 
             Response.Redirect("Cyclists.aspx");
