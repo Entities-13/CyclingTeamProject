@@ -1,6 +1,5 @@
 namespace Cycling.Data.SQLite.Migrations
 {
-    using Models.SQLite;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,21 +14,18 @@ namespace Cycling.Data.SQLite.Migrations
 
         protected override void Seed(Cycling.Data.SQLite.CyclingDbContextSQLite context)
         {
-            var destination = new CyclingDestination();
-            destination.Name = "Somewhere in Pirin";
-            destination.Country = "Bulgaria";
+            //  This method will be called after migrating to the latest version.
 
-            var instructor = new CyclingInstructor();
-            instructor.Name = "Nikodim Nikodimov";
-            instructor.Country = "Bulgaria";
-
-            using (var dbContext = new CyclingDbContextSQLite())
-            {
-                dbContext.CyclingDestination.Add(destination);
-                dbContext.CyclingInstructors.Add(instructor);
-
-                dbContext.SaveChanges();
-            }
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }

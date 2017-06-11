@@ -73,9 +73,9 @@
   <ItemGroup>
     <Compile Include="CyclingDbContextSQLite.cs" />
     <Compile Include="DbContextInitializer.cs" />
-    <Compile Include="Migrations\201706110949198_initial.cs" />
-    <Compile Include="Migrations\201706110949198_initial.Designer.cs">
-      <DependentUpon>201706110949198_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706111809326_initial.cs" />
+    <Compile Include="Migrations\201706111809326_initial.Designer.cs">
+      <DependentUpon>201706111809326_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,8 +91,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706110949198_initial.resx">
-      <DependentUpon>201706110949198_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706111809326_initial.resx">
+      <DependentUpon>201706111809326_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

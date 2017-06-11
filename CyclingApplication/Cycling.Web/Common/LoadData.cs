@@ -39,6 +39,7 @@ namespace Cycling.Web.Common
                     }
                 }
 
+                //parsing data
                 tour.Add(new TourData()
                 {
                     Year = DateTime.Parse("1-6-" + element[0]),

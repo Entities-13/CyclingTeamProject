@@ -62,9 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContextPostgre.cs" />
-    <Compile Include="Migrations\201706101725585_postgre initial.cs" />
-    <Compile Include="Migrations\201706101725585_postgre initial.Designer.cs">
-      <DependentUpon>201706101725585_postgre initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706111809068_initial.cs" />
+    <Compile Include="Migrations\201706111809068_initial.Designer.cs">
+      <DependentUpon>201706111809068_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,8 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706101725585_postgre initial.resx">
-      <DependentUpon>201706101725585_postgre initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706111809068_initial.resx">
+      <DependentUpon>201706111809068_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

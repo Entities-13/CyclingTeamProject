@@ -1,5 +1,6 @@
 ﻿using Cycling.Models.MSSQL;
 using System.Data.Entity;
+using Cycling.Models;
 
 namespace Cycling.Data
 {
@@ -21,6 +22,12 @@ namespace Cycling.Data
         public virtual IDbSet<Town> Towns { get; set; }
 
         public virtual IDbSet<Address> Addresses { get; set; }
+
+        public virtual IDbSet<TourDeFrance> TourDeFrance { get; set; }
+
+        public virtual IDbSet<GiroDItalia> GiroDItalia { get; set; }
+
+        public virtual IDbSet<CyclistNext> CylistNext { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

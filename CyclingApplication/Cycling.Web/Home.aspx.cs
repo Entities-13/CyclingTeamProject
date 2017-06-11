@@ -36,7 +36,6 @@ namespace Cycling.Web
             cyclistsFactory.CreateMany();
 
             // this is for SQLite 
-
             var destination = new CyclingDestination();
             destination.Name = "Somewhere in Pirin";
             destination.Country = "Bulgaria";
@@ -52,14 +51,14 @@ namespace Cycling.Web
 
                 dbContext.SaveChanges();
             }
-            //
+            //     
 
-            Response.Redirect("Cyclists.aspx");
-
-            //getting xml
+            //getting xml - Tour de France
             string filePathXml = HttpContext.Current.Server.MapPath("~/Common/DataToImport/France2.xml");
             var franceTour = new List<TourData>();
             loadCyclists.GetListOfWinner(XmlReader.Create(filePathXml), franceTour);
+
+            Response.Redirect("Cyclists.aspx");
         }
     }
 }

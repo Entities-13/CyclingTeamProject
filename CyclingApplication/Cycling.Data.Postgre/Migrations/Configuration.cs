@@ -1,6 +1,5 @@
 namespace Cycling.Data.Postgre.Migrations
 {
-    using Models.PostgreSQL;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,19 +14,18 @@ namespace Cycling.Data.Postgre.Migrations
 
         protected override void Seed(Cycling.Data.Postgre.CyclingDbContextPostgre context)
         {
-            var championship = new Championship();
-                championship.Name = "World Championship";
+            //  This method will be called after migrating to the latest version.
 
-            var sponsor = new Sponsor();
-            sponsor.Name = "Union Cycliste Internationale";
-
-            using (var dbContext = new CyclingDbContextPostgre())
-            {
-                dbContext.Championships.Add(championship);
-                dbContext.Sponsors.Add(sponsor);
-
-                dbContext.SaveChanges();
-            }
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }
