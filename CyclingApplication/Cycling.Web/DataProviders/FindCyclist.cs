@@ -1,8 +1,8 @@
 ﻿using Cycling.Data;
+using Cycling.Data.Common;
 using Cycling.Models.MSSQL;
 using Cycling.Web.Contracts;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Cycling.Web.DataProviders
 {
@@ -17,9 +17,12 @@ namespace Cycling.Web.DataProviders
 
         public IEnumerable<Cyclist> Find()
         {
-            using (var dbContext = new CyclingDbContext())
+            using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
             {
-                return dbContext.Cyclists.Where(x => x.Id == this.CyclistId).ToList();
+                var cyclistObj = unitOfWork.CyclistsRepository.GetById(this.CyclistId);
+                var cyclistCollection = new List<Cyclist>() { cyclistObj };
+
+                return cyclistCollection;
             }
         }
     }
