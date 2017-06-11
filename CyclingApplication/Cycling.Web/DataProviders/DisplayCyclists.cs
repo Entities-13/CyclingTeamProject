@@ -1,4 +1,5 @@
 ﻿using Cycling.Data;
+using Cycling.Data.Common;
 using Cycling.Models.MSSQL;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,11 @@ namespace Cycling.Web.DataProviders
 {
     public class DisplayCyclists
     {
-       public IEnumerable<Cyclist> Display()
+        public IEnumerable<Cyclist> Display()
         {
-            using (var dbContext = new CyclingDbContext())
+            using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext())) 
             {
-              return dbContext.Cyclists.ToList();
+                return unitOfWork.CyclistsRepository.GetAll().ToList();
             }
         }
     }
