@@ -1,5 +1,7 @@
 ﻿using Cycling.Data;
+using Cycling.Data.SQLite;
 using Cycling.Models;
+using Cycling.Models.SQLite;
 using Cycling.Web.Common;
 using Cycling.Web.Factories;
 using Newtonsoft.Json;
@@ -33,6 +35,24 @@ namespace Cycling.Web
             var cyclistsFactory = new CreateCyclist(cyclists);
             cyclistsFactory.CreateMany();
 
+            //
+
+            var destination = new CyclingDestination();
+            destination.Name = "Somewhere in Pirin";
+            destination.Country = "Bulgaria";
+
+            var instructor = new CyclingInstructor();
+            instructor.Name = "Nikodim Nikodimov";
+            instructor.Country = "Bulgaria";
+
+            using (var dbContext = new CyclingDbContextSQLite())
+            {
+                dbContext.CyclingDestination.Add(destination);
+                dbContext.CyclingInstructors.Add(instructor);
+
+                dbContext.SaveChanges();
+            }
+            //
             Response.Redirect("Cyclists.aspx");
 
             //getting xml

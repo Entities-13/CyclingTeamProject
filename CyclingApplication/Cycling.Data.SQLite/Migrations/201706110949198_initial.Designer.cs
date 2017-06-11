@@ -7,13 +7,13 @@ namespace Cycling.Data.SQLite.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initsecond : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initsecond));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706102029469_init-second"; }
+            get { return "201706110949198_initial"; }
         }
         
         string IMigrationMetadata.Source

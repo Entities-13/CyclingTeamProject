@@ -72,13 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContextSQLite.cs" />
-    <Compile Include="Migrations\201706102022018_sqllite initial.cs" />
-    <Compile Include="Migrations\201706102022018_sqllite initial.Designer.cs">
-      <DependentUpon>201706102022018_sqllite initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706102029469_init-second.cs" />
-    <Compile Include="Migrations\201706102029469_init-second.Designer.cs">
-      <DependentUpon>201706102029469_init-second.cs</DependentUpon>
+    <Compile Include="DbContextInitializer.cs" />
+    <Compile Include="Migrations\201706110949198_initial.cs" />
+    <Compile Include="Migrations\201706110949198_initial.Designer.cs">
+      <DependentUpon>201706110949198_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,11 +91,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706102022018_sqllite initial.resx">
-      <DependentUpon>201706102022018_sqllite initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706102029469_init-second.resx">
-      <DependentUpon>201706102029469_init-second.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706110949198_initial.resx">
+      <DependentUpon>201706110949198_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
