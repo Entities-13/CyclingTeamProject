@@ -22,7 +22,7 @@ Create a project of your choice and implement it using Code First approach with 
 - [x] Use SQL Server 2016
 - [x] At least five tables in the SQL Server database
 - [x] Provide all type of relations in the database and use both attributes and the Fluent API (Model builder) for configuration
-- [ ] Put some of the data of your application in SQLite and PostgreSQL (at least two tables)
+- [x] Put some of the data of your application in SQLite and PostgreSQL (at least two tables)
 - [x] Load some of the data from external files (Excel, XML, JSON, zip, etc.) of your choice
 - [x] The user should be able to manipulate the database through the client (basic CRUD. No need to provide roles for the users)
 - [x] Provide some usable user interface for the client (could be the console, WPF, Windows Forms, ASP.NET Web application, etc.)
