@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Cycling.Data.Common
 {
-    public class EfunitOfWork : IUnitOfWork, IDisposable
+    public class EfUnitOfWork : IUnitOfWork, IDisposable
     {
         private DbContext dbContext;
 
-        public EfunitOfWork(DbContext dbcontext)
+        public EfUnitOfWork(DbContext dbcontext)
         {
             this.dbContext = dbcontext;
         }
@@ -24,6 +24,7 @@ namespace Cycling.Data.Common
 
         public void Dispose()
         {
+            this.dbContext.Dispose();
         }
     }
 }

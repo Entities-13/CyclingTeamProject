@@ -35,7 +35,7 @@ namespace Cycling.Web
             var cyclistsFactory = new CreateCyclist(cyclists);
             cyclistsFactory.CreateMany();
 
-            //
+            // this is for SQLite 
 
             var destination = new CyclingDestination();
             destination.Name = "Somewhere in Pirin";
@@ -53,6 +53,7 @@ namespace Cycling.Web
                 dbContext.SaveChanges();
             }
             //
+
             Response.Redirect("Cyclists.aspx");
 
             //getting xml

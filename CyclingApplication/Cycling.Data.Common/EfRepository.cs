@@ -22,7 +22,7 @@ namespace Cycling.Data.Common
         protected DbSet<T> DbSet { get; set; }
 
 
-        public T GetById(int id)
+        public T GetById(object id)
         {
             return this.DbSet.Find(id);
         }

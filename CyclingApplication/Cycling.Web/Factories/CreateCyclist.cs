@@ -4,6 +4,7 @@ using Cycling.Web.Common;
 using Cycling.Web.Contracts;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace Cycling.Web.Factories
 {
@@ -142,6 +143,8 @@ namespace Cycling.Web.Factories
                 VueltaEspanaWins = this.vueltaWins,
                 CurrentTeam = this.currentTeam
             };
+
+  
 
             using (var dbContext = new CyclingDbContext())
             {
