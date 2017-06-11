@@ -1,5 +1,8 @@
 ﻿using Cycling.Data.Common.Contracts;
 using Cycling.Data.Common.Repositories;
+using Cycling.Models.MSSQL;
+using Cycling.Models.PostgreSQL;
+using Cycling.Models.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,10 +19,28 @@ namespace Cycling.Data.Common
         public EfUnitOfWork(DbContext dbcontext)
         {
             this.dbContext = dbcontext;
-            this.CyclistsRepo = new EfRepository(this.dbContext);
+            this.CyclistsRepository = new EfRepository<Cyclist>(this.dbContext);
+            this.BicyclesRepository = new EfRepository<Bicycle>(this.dbContext);
+            this.TownsRepository = new EfRepository<Town>(this.dbContext);
+            this.AddressesRepository = new EfRepository<Address>(this.dbContext);
+            this.WheelsRepository = new EfRepository<Wheel>(this.dbContext);
+            this.TiresRepository = new EfRepository<Tire>(this.dbContext);
+            this.ChampionshipsRepository = new EfRepository<Championship>(this.dbContext);
+            this.SponsorsRepository = new EfRepository<Sponsor>(this.dbContext);
+            this.CyclingDestinationsRepository = new EfRepository<CyclingDestination>(this.dbContext);
+            this.CyclingInstructorsRepository = new EfRepository<CyclingInstructor>(this.dbContext);
         }
 
-        public EfRepository CyclistsRepo { get; private set; }
+        public EfRepository<Cyclist> CyclistsRepository { get; private set; }
+        public EfRepository<Bicycle> BicyclesRepository { get; private set; }
+        public EfRepository<Town>  TownsRepository { get; private set; }
+        public EfRepository<Address> AddressesRepository { get; private set; }
+        public EfRepository<Wheel> WheelsRepository { get; private set; }
+        public EfRepository<Tire> TiresRepository { get; private set; }
+        public EfRepository<Championship> ChampionshipsRepository { get; private set; }
+        public EfRepository<Sponsor> SponsorsRepository { get; private set; }
+        public EfRepository<CyclingDestination> CyclingDestinationsRepository { get; private set; }
+        public EfRepository<CyclingInstructor> CyclingInstructorsRepository { get; private set; }
 
 
         public void Commit()

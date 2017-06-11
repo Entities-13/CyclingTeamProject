@@ -147,8 +147,8 @@ namespace Cycling.Web.DataProviders
 
             using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
             {
-                unitOfWork.CyclistsRepo.Add(cyclistNew);
-
+                unitOfWork.CyclistsRepository.Add(cyclistNew);
+                
                 unitOfWork.Commit();
             }
 
