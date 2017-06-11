@@ -161,6 +161,7 @@
   <ItemGroup>
     <Content Include="DeleteCyclist.aspx" />
     <Content Include="SearchForCyclist.aspx" />
+    <Content Include="SQLiteAndPostgre.aspx" />
     <Content Include="UpdateCyclistPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -221,6 +222,13 @@
     </Compile>
     <Compile Include="SearchForCyclist.aspx.designer.cs">
       <DependentUpon>SearchForCyclist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SQLiteAndPostgre.aspx.cs">
+      <DependentUpon>SQLiteAndPostgre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SQLiteAndPostgre.aspx.designer.cs">
+      <DependentUpon>SQLiteAndPostgre.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateCyclistPage.aspx.cs">
       <DependentUpon>UpdateCyclistPage.aspx</DependentUpon>

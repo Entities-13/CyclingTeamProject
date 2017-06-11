@@ -36,25 +36,6 @@ namespace Cycling.Web
             var cyclistsFactory = new CreateCyclist(cyclists);
             cyclistsFactory.CreateMany();
 
-            // this is for SQLite should be moved from here
-
-            var destination = new CyclingDestination();
-            destination.Name = "Somewhere in Pirin";
-            destination.Country = "Bulgaria";
-
-            var instructor = new CyclingInstructor();
-            instructor.Name = "Nikodim Nikodimov";
-            instructor.Country = "Bulgaria";
-
-            using (var unitOfWork = new EfUnitOfWork(new CyclingDbContextSQLite()))
-            {
-                unitOfWork.CyclingDestinationsRepository.Add(destination);
-                unitOfWork.CyclingInstructorsRepository.Add(instructor);
-
-                unitOfWork.Commit();
-            }
-
-            //
 
             Response.Redirect("Cyclists.aspx");
 
@@ -63,5 +44,7 @@ namespace Cycling.Web
             var franceTour = new List<TourData>();
             loadCyclists.GetListOfWinner(XmlReader.Create(filePathXml), franceTour);
         }
+
+       
     }
 }

@@ -21,6 +21,7 @@
                 <li role="presentation"><a href="SearchForCyclist.aspx">Find Cyclist</a></li>
                 <li role="presentation"><a href="DeleteCyclist.aspx">Remove Cyclist</a></li>
                 <li role="presentation"><a href="Cyclists.aspx">Cyclists Statistics</a></li>
+                <li role="presentation"><a href="SQLiteAndPostgre.aspx">SQLite & PostgreSQL</a></li>
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolderCycling" runat="server">
             </asp:ContentPlaceHolder>
