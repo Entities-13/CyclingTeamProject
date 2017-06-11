@@ -49,15 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IEfExtendedRepository.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Contracts\IUnitOfWork.cs" />
-    <Compile Include="EfRepository.cs" />
+    <Compile Include="Repositories\EfExtendedRepository.cs" />
+    <Compile Include="Repositories\EfRepository.cs" />
     <Compile Include="EfUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cycling.Data.Postgre\Cycling.Data.Postgre.csproj">
+      <Project>{0d283310-84c0-479c-87ed-1064e807f133}</Project>
+      <Name>Cycling.Data.Postgre</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cycling.Data.SQLite\Cycling.Data.SQLite.csproj">
+      <Project>{273718e3-899b-4c64-97e2-3ca7dc9e4652}</Project>
+      <Name>Cycling.Data.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cycling.Data\Cycling.Data.csproj">
+      <Project>{c5bd4c3c-6fca-4476-8f49-4f6d35c0e499}</Project>
+      <Name>Cycling.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cycling.Models\Cycling.Models.csproj">
+      <Project>{268EFD88-3F15-40DE-AF76-4B7A60D4B482}</Project>
+      <Name>Cycling.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

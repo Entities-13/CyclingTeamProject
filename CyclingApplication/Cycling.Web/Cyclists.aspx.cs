@@ -1,6 +1,6 @@
 ﻿using Cycling.Data;
 using Cycling.Models;
-using Cycling.Web.Factories;
+using Cycling.Web.DataProviders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
