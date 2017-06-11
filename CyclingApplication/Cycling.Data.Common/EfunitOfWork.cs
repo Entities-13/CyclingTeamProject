@@ -1,4 +1,5 @@
 ﻿using Cycling.Data.Common.Contracts;
+using Cycling.Data.Common.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,7 +16,11 @@ namespace Cycling.Data.Common
         public EfUnitOfWork(DbContext dbcontext)
         {
             this.dbContext = dbcontext;
+            this.CyclistsRepo = new EfRepository(this.dbContext);
         }
+
+        public EfRepository CyclistsRepo { get; private set; }
+
 
         public void Commit()
         {

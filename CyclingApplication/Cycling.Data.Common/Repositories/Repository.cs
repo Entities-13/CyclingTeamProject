@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System.Data.Entity;
 
-namespace Cycling.Data.Common
+namespace Cycling.Data.Common.Repositories
 {
-    public class EfRepository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
-        public EfRepository(DbContext dbContext)
+        public Repository(DbContext dbContext)
         {
             this.DbContext = dbContext;
             this.DbSet = this.DbContext.Set<T>();

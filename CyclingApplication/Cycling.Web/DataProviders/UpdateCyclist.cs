@@ -3,7 +3,7 @@ using Cycling.Web.Common;
 using Cycling.Web.Contracts;
 using System.Linq;
 
-namespace Cycling.Web.Factories
+namespace Cycling.Web.DataProviders
 {
     public class UpdateCyclist : IUpdateCyclist
     {

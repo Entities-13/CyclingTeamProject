@@ -4,7 +4,7 @@ using Cycling.Web.Contracts;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Cycling.Web.Factories
+namespace Cycling.Web.DataProviders
 {
     public class FindCyclist : IFindCyclist
     {

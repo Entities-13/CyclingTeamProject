@@ -3,7 +3,7 @@ using Cycling.Models.MSSQL;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Cycling.Web.Factories
+namespace Cycling.Web.DataProviders
 {
     public class DisplayCyclists
     {

@@ -191,15 +191,15 @@
     <Compile Include="Cycling.Master.designer.cs">
       <DependentUpon>Cycling.Master</DependentUpon>
     </Compile>
-    <Compile Include="Factories\CreateCyclist.cs" />
+    <Compile Include="DataProviders\CreateCyclist.cs" />
     <Compile Include="Contracts\ICreateCyclist.cs" />
     <Compile Include="Contracts\IRemoveCyclist.cs" />
     <Compile Include="Contracts\IUpdateCyclist.cs" />
-    <Compile Include="Factories\DisplayCyclists.cs" />
-    <Compile Include="Factories\FindCyclist.cs" />
+    <Compile Include="DataProviders\DisplayCyclists.cs" />
+    <Compile Include="DataProviders\FindCyclist.cs" />
     <Compile Include="Contracts\IFindCyclist.cs" />
-    <Compile Include="Factories\RemoveCyclist.cs" />
-    <Compile Include="Factories\UpdateCyclist.cs" />
+    <Compile Include="DataProviders\RemoveCyclist.cs" />
+    <Compile Include="DataProviders\UpdateCyclist.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

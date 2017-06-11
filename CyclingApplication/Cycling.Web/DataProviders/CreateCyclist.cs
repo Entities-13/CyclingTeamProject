@@ -1,4 +1,5 @@
 ﻿using Cycling.Data;
+using Cycling.Data.Common;
 using Cycling.Models.MSSQL;
 using Cycling.Web.Common;
 using Cycling.Web.Contracts;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Cycling.Web.Factories
+namespace Cycling.Web.DataProviders
 {
     public class CreateCyclist : ICreateCyclist
     {
@@ -144,14 +145,19 @@ namespace Cycling.Web.Factories
                 CurrentTeam = this.currentTeam
             };
 
-  
-
-            using (var dbContext = new CyclingDbContext())
+            using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
             {
-                dbContext.Cyclists.Add(cyclistNew);
+                unitOfWork.CyclistsRepo.Add(cyclistNew);
 
-                dbContext.SaveChanges();
+                unitOfWork.Commit();
             }
+
+            //using (var dbContext = new CyclingDbContext())
+            //{
+            //    dbContext.Cyclists.Add(cyclistNew);
+
+            //    dbContext.SaveChanges();
+            //}
         }
 
         public void CreateMany()
