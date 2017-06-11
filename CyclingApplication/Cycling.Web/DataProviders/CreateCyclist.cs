@@ -148,36 +148,29 @@ namespace Cycling.Web.DataProviders
             using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
             {
                 unitOfWork.CyclistsRepository.Add(cyclistNew);
-                
+             
                 unitOfWork.Commit();
             }
-
-            //using (var dbContext = new CyclingDbContext())
-            //{
-            //    dbContext.Cyclists.Add(cyclistNew);
-
-            //    dbContext.SaveChanges();
-            //}
         }
 
         public void CreateMany()
         {
-            using (var dbContext = new CyclingDbContext())
+            using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
             {
+                var cyclistsInDb = unitOfWork.CyclistsRepository.GetAll().ToList();
 
-                var db = dbContext.Cyclists.ToList();
                 foreach (var item in this.Cyclists)
                 {
-                    if (!db.Exists(x =>
+                    if (!cyclistsInDb.Exists(x =>
                                 x.FirstName.ToLower() == item.FirstName.ToLower() &&
                                 x.LastName.ToLower() == item.LastName.ToLower()))
                     {
-                        dbContext.Cyclists.Add(item);
+                        unitOfWork.CyclistsRepository.Add(item);
                     }
 
                 }
 
-                dbContext.SaveChanges();
+                unitOfWork.Commit();
             }
         }
     }
