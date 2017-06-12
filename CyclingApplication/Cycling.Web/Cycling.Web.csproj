@@ -163,8 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddCyclist.aspx" />
+    <Content Include="CSS\CyclingStyles.css" />
     <Content Include="Cyclists.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\background.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
