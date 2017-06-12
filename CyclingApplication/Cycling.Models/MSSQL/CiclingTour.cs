@@ -20,6 +20,5 @@ namespace Cycling.Models
 
         public TimeSpan TimeOfWinner { get; set; }
 
-        public virtual int CyclistNext_id { get; set; }
     }
 }

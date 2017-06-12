@@ -15,7 +15,6 @@ using System.Web.Hosting;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
-using Cycling.Web.DataProviders;
 
 namespace Cycling.Web
 {
@@ -36,25 +35,14 @@ namespace Cycling.Web
             var cyclistsFactory = new CreateCyclist(cyclists);
             cyclistsFactory.CreateMany();
 
-            // this is for SQLite 
-            var destination = new CyclingDestination();
-            destination.Name = "Somewhere in Pirin";
-            destination.Country = "Bulgaria";
+            Response.Redirect("Cyclists.aspx");
+        }
 
-            var instructor = new CyclingInstructor();
-            instructor.Name = "Nikodim Nikodimov";
-            instructor.Country = "Bulgaria";
-
-            using (var dbContext = new CyclingDbContextSQLite())
-            {
-                dbContext.CyclingDestination.Add(destination);
-                dbContext.CyclingInstructors.Add(instructor);
-
-                dbContext.SaveChanges();
-            }
-            //     
-
+        protected void ButtonAddXmlData_Click(object sender, EventArgs e)
+        {
             //getting xml - Tour de France
+            var loadCyclists = new LoadData();
+
             string filePathXml = HttpContext.Current.Server.MapPath("~/Common/DataToImport/France2.xml");
             var franceTour = new List<TourData>();
             loadCyclists.GetListOfWinner(XmlReader.Create(filePathXml), franceTour);
