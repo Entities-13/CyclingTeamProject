@@ -23,7 +23,7 @@ namespace Cycling.App.Tests.DataProviders.Tests.CreateCyclistTest
         }
 
         [Test]
-        public void PropertyFirstName_WhenPassedValueIsLongerThanMaxLengthAllowed_ShouldThrowIndexOutOfRangeException()
+        public void PropertyFirstName_WhenPassedValueIsLongerThan40Chars_ShouldThrowIndexOutOfRangeException()
         {
             // Arrange
             var invalidFirstName = "this name is way to long, so it is not goinig to be a valid name and a exception should be trown!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
@@ -38,6 +38,34 @@ namespace Cycling.App.Tests.DataProviders.Tests.CreateCyclistTest
         {
             // Arrange& Act & Assert
             Assert.Throws<NullReferenceException>(() => new CreateCyclist(invalidFirstName, "Draganov", 13, 0, 1, 2, "Segafredo"));
+        }
+
+        [Test]
+        public void PropertyLastName_WhenPassedValueIsValid_ShouldSetCorrectly()
+        {
+            // Arrange
+            var createCyclist = new CreateCyclist("Dragan", "Draganov", 13, 0, 1, 2, "Segafredo");
+
+            // Act & Assert
+            StringAssert.Contains("Dragan", createCyclist.FirstName);
+        }
+
+        [Test]
+        public void PropertyLastName_WhenPassedValueIsLongerThan40Chars_ShouldThrowIndexOutOfRangeException()
+        {
+            // Arrange
+            var invalidLastName = "this name is way to long, so it is not goinig to be a valid name and a exception should be trown!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+
+            // Act & Assert
+            Assert.Throws<IndexOutOfRangeException>(() => new CreateCyclist("Dragan", invalidLastName, 13, 0, 1, 2, "Segafredo"));
+        }
+
+        [TestCase("")]
+        [TestCase(null)]
+        public void PropertyLastName_WhenPassedValueIsNullOrEmpty_ShouldThrowNullReferenceExceptionException(string invalidLastName)
+        {
+            // Arrange& Act & Assert
+            Assert.Throws<NullReferenceException>(() => new CreateCyclist("Dragan", invalidLastName, 13, 0, 1, 2, "Segafredo"));
         }
     }
 }
