@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201706112251329_change name of CyclistNext.Designer.cs">
       <DependentUpon>201706112251329_change name of CyclistNext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706120732090_change constraints in CyclistNext.cs" />
+    <Compile Include="Migrations\201706120732090_change constraints in CyclistNext.Designer.cs">
+      <DependentUpon>201706120732090_change constraints in CyclistNext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706112251329_change name of CyclistNext.resx">
       <DependentUpon>201706112251329_change name of CyclistNext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706120732090_change constraints in CyclistNext.resx">
+      <DependentUpon>201706120732090_change constraints in CyclistNext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
