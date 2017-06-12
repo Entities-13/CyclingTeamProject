@@ -38,5 +38,33 @@ namespace Cycling.App.Tests.DataProviders.Tests.RemoveCyclistTests
             // Arrange& Act & Assert
             Assert.Throws<NullReferenceException>(() => new RemoveCyclist(invalidFirstName, "Draganov"));
         }
+
+        [Test]
+        public void PropertyLastName_WhenPassedValueIsValid_ShouldSetCorrectly()
+        {
+            // Arrange
+            var removeCyclist = new RemoveCyclist("Dragan", "Draganov");
+
+            // Act & Assert
+            StringAssert.Contains("Draganov", removeCyclist.LastName);
+        }
+
+        [Test]
+        public void PropertyLastName_WhenPassedValueIsLongerThan40Chars_ShouldThrowIndexOutOfRangeException()
+        {
+            // Arrange
+            var invalidLastName = "this name is way to long, so it is not goinig to be a valid name and a exception should be trown!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+
+            // Act & Assert
+            Assert.Throws<IndexOutOfRangeException>(() => new RemoveCyclist("Dragan", invalidLastName));
+        }
+
+        [TestCase("")]
+        [TestCase(null)]
+        public void PropertyLasyName_WhenPassedValueIsNullOrEmpty_ShouldThrowNullReferenceExceptionException(string invalidLastName)
+        {
+            // Arrange& Act & Assert
+            Assert.Throws<NullReferenceException>(() => new RemoveCyclist("Dragan", invalidLastName));
+        }
     }
 }

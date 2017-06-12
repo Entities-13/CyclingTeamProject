@@ -64,6 +64,7 @@
     <Compile Include="DataProviders.Tests\CreateCyclistTest\PropertiesTests.cs" />
     <Compile Include="DataProviders.Tests\RemoveCyclistTests\ConstructorTests.cs" />
     <Compile Include="DataProviders.Tests\RemoveCyclistTests\PropertiesTests.cs" />
+    <Compile Include="DataProviders.Tests\RemoveCyclistTests\RemoveMethodsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
