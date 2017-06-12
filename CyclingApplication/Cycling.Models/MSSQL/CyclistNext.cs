@@ -11,18 +11,24 @@ namespace Cycling.Models.MSSQL
 {
     public class CyclistNext
     {
-        private const string invalidName = "Names must be more than 3 and less than 40 sumbols, start with uppaercase and follow by lowercase";
+        private const string invalidName = "Names must be more than 3 and less than 40 sumbols, only Latyn symbols, not separated by any symbol";
+        private const string invalidNationality = "Nationality must be more than 3 and less than 40 sumbols, only latin symbol, separeted by comma";
+
 
         public int Id { get; set; }
 
-        [RegularExpression("^[A-Z][a-z]{2,40}$", ErrorMessage = invalidName)]
+        [MaxLength(40)]
+        [RegularExpression("^[A-Za-z]{3,40}$", ErrorMessage = invalidName)]
         public string FirstName { get; set; }
 
-        [RegularExpression("^[A-Z][a-z]{2,40}$", ErrorMessage = invalidName)]
+        [MaxLength(40)]
+        [RegularExpression("^[A-Za-z]{3,40}$", ErrorMessage = invalidName)]
         public string LastName { get; set; }
 
         public DateTime BirthDay { get; set; }
 
+        [MaxLength(40)]
+        [RegularExpression("^[A-Za-z ]{3,40}$", ErrorMessage = invalidNationality)]
         public string Nationality { get; set; }
 
         public virtual ICollection<TourDeFrance> TF_Id { get; set; }
