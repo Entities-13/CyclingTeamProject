@@ -64,5 +64,16 @@ namespace Cycling.Web
 
             Response.Redirect("Cyclists.aspx");
         }
+
+        protected void ButtonAddBicycleData_Click(object sender, EventArgs e)
+        {
+            string filePathJson = HttpContext.Current.Server.MapPath("~/Common/DataToImport/BicyclesData.json");
+
+            var loadBicycles = new LoadBicycleData();
+            var bicycles = loadBicycles.LoadDataFromJson(filePathJson);
+
+            var bicyclesFactory = new CreateBicycle(bicycles);
+            bicyclesFactory.CreateMany();
+        }
     }
 }

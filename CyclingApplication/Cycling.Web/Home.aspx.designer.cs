@@ -22,6 +22,15 @@ namespace Cycling.Web {
         protected global::System.Web.UI.WebControls.Button ButtonAddJsonData;
         
         /// <summary>
+        /// ButtonAddBicycleData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonAddBicycleData;
+        
+        /// <summary>
         /// ButtonAddXmlData control.
         /// </summary>
         /// <remarks>
