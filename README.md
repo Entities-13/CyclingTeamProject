@@ -26,13 +26,13 @@ Create a project of your choice and implement it using Code First approach with 
 - [x] Load some of the data from external files (Excel, XML, JSON, zip, etc.) of your choice
 - [x] The user should be able to manipulate the database through the client (basic CRUD. No need to provide roles for the users)
 - [x] Provide some usable user interface for the client (could be the console, WPF, Windows Forms, ASP.NET Web application, etc.)
-- [ ] Generate PDF reports based on your application
+- [x] Generate PDF reports based on your application
 
 ![project](http://i.imgur.com/gftm1XJ.png)
 
 ## Additional Requirements
 
-*	For the PDF export use a non-commercial third party framework
+*	[x] For the PDF export use a non-commercial third party framework
 *	The XML files should be read / written through the standard .NET parsers (of your choice)
 *	[x] For JSON serializations use a non-commercial library / framework of your choice
 
