@@ -264,6 +264,10 @@
       <Project>{41a11000-09e6-4981-90a8-2600f3b5ee60}</Project>
       <Name>Cycling.Data.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cycling.Data.Postgre\Cycling.Data.Postgre.csproj">
+      <Project>{0D283310-84C0-479C-87ED-1064E807F133}</Project>
+      <Name>Cycling.Data.Postgre</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cycling.Data.SQLite\Cycling.Data.SQLite.csproj">
       <Project>{273718e3-899b-4c64-97e2-3ca7dc9e4652}</Project>
       <Name>Cycling.Data.SQLite</Name>
