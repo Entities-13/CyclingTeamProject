@@ -10,6 +10,7 @@ namespace Cycling.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Cycling.Data.CyclingDbContext";
         }
 
         protected override void Seed(Cycling.Data.CyclingDbContext context)

@@ -50,33 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContext.cs" />
-    <Compile Include="Migrations\201706112151158_initial.cs" />
-    <Compile Include="Migrations\201706112151158_initial.Designer.cs">
-      <DependentUpon>201706112151158_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706112154200_add next cyclist.cs" />
-    <Compile Include="Migrations\201706112154200_add next cyclist.Designer.cs">
-      <DependentUpon>201706112154200_add next cyclist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706112201228_TargetMigration.cs" />
-    <Compile Include="Migrations\201706112201228_TargetMigration.Designer.cs">
-      <DependentUpon>201706112201228_TargetMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706112213188_add fk for TF GI.cs" />
-    <Compile Include="Migrations\201706112213188_add fk for TF GI.Designer.cs">
-      <DependentUpon>201706112213188_add fk for TF GI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706112220120_change fK Name.cs" />
-    <Compile Include="Migrations\201706112220120_change fK Name.Designer.cs">
-      <DependentUpon>201706112220120_change fK Name.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706112224532_change name of FK.cs" />
-    <Compile Include="Migrations\201706112224532_change name of FK.Designer.cs">
-      <DependentUpon>201706112224532_change name of FK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706112251329_change name of CyclistNext.cs" />
-    <Compile Include="Migrations\201706112251329_change name of CyclistNext.Designer.cs">
-      <DependentUpon>201706112251329_change name of CyclistNext.cs</DependentUpon>
+    <Compile Include="Migrations\201706120832307_InitialCreate.cs" />
+    <Compile Include="Migrations\201706120832307_InitialCreate.Designer.cs">
+      <DependentUpon>201706120832307_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201706120732090_change constraints in CyclistNext.cs" />
     <Compile Include="Migrations\201706120732090_change constraints in CyclistNext.Designer.cs">
@@ -96,26 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706112151158_initial.resx">
-      <DependentUpon>201706112151158_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706112154200_add next cyclist.resx">
-      <DependentUpon>201706112154200_add next cyclist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706112201228_TargetMigration.resx">
-      <DependentUpon>201706112201228_TargetMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706112213188_add fk for TF GI.resx">
-      <DependentUpon>201706112213188_add fk for TF GI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706112220120_change fK Name.resx">
-      <DependentUpon>201706112220120_change fK Name.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706112224532_change name of FK.resx">
-      <DependentUpon>201706112224532_change name of FK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706112251329_change name of CyclistNext.resx">
-      <DependentUpon>201706112251329_change name of CyclistNext.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706120832307_InitialCreate.resx">
+      <DependentUpon>201706120832307_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706120732090_change constraints in CyclistNext.resx">
       <DependentUpon>201706120732090_change constraints in CyclistNext.cs</DependentUpon>

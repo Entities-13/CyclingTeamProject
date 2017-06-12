@@ -6,5 +6,6 @@
     <div class="well well-sm">
         <br />
         <asp:Button ID="ButtonAddJsonData" runat="server" Text="Load Cyclists Data From Json" OnClick="ButtonAddJsonData_Click" CssClass="btn btn-warning" />
+        <asp:Button ID="ButtonAddXmlData" runat="server" Text="Load Data From Xml" CssClass="btn btn-warning" OnClick="ButtonAddXmlData_Click" />
     </div>
 </asp:Content>

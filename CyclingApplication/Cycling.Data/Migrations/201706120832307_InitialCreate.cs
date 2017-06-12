@@ -3,7 +3,7 @@ namespace Cycling.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -84,18 +84,16 @@ namespace Cycling.Data.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.TourDeFrances",
+                "dbo.CyclistNexts",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Year = c.DateTime(nullable: false),
-                        Stage = c.Int(nullable: false),
-                        Distance = c.Int(nullable: false),
-                        TimeOfWinner = c.Time(nullable: false, precision: 7),
-                        IdOfWinner = c.Int(nullable: false),
+                        FirstName = c.String(maxLength: 40),
+                        LastName = c.String(maxLength: 40),
+                        BirthDay = c.DateTime(nullable: false),
+                        Nationality = c.String(maxLength: 40),
                     })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.Year);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.GiroDItalias",
@@ -106,10 +104,28 @@ namespace Cycling.Data.Migrations
                         Stage = c.Int(nullable: false),
                         Distance = c.Int(nullable: false),
                         TimeOfWinner = c.Time(nullable: false, precision: 7),
-                        IdOfWinner = c.Int(nullable: false),
+                        CyclistNext_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .Index(t => t.Year);
+                .ForeignKey("dbo.CyclistNexts", t => t.CyclistNext_Id)
+                .Index(t => t.Year)
+                .Index(t => t.CyclistNext_Id);
+            
+            CreateTable(
+                "dbo.TourDeFrances",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Year = c.DateTime(nullable: false),
+                        Stage = c.Int(nullable: false),
+                        Distance = c.Int(nullable: false),
+                        TimeOfWinner = c.Time(nullable: false, precision: 7),
+                        CyclistNext_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.CyclistNexts", t => t.CyclistNext_Id)
+                .Index(t => t.Year)
+                .Index(t => t.CyclistNext_Id);
             
             CreateTable(
                 "dbo.BicycleCyclists",
@@ -128,6 +144,8 @@ namespace Cycling.Data.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.TourDeFrances", "CyclistNext_Id", "dbo.CyclistNexts");
+            DropForeignKey("dbo.GiroDItalias", "CyclistNext_Id", "dbo.CyclistNexts");
             DropForeignKey("dbo.Addresses", "Town_Id", "dbo.Towns");
             DropForeignKey("dbo.Cyclists", "Town_Id", "dbo.Towns");
             DropForeignKey("dbo.Bicycles", "Wheel_Id", "dbo.Wheels");
@@ -136,15 +154,18 @@ namespace Cycling.Data.Migrations
             DropForeignKey("dbo.BicycleCyclists", "Bicycle_Id", "dbo.Bicycles");
             DropIndex("dbo.BicycleCyclists", new[] { "Cyclist_Id" });
             DropIndex("dbo.BicycleCyclists", new[] { "Bicycle_Id" });
-            DropIndex("dbo.GiroDItalias", new[] { "Year" });
+            DropIndex("dbo.TourDeFrances", new[] { "CyclistNext_Id" });
             DropIndex("dbo.TourDeFrances", new[] { "Year" });
+            DropIndex("dbo.GiroDItalias", new[] { "CyclistNext_Id" });
+            DropIndex("dbo.GiroDItalias", new[] { "Year" });
             DropIndex("dbo.Wheels", new[] { "Tire_Id" });
             DropIndex("dbo.Bicycles", new[] { "Wheel_Id" });
             DropIndex("dbo.Cyclists", new[] { "Town_Id" });
             DropIndex("dbo.Addresses", new[] { "Town_Id" });
             DropTable("dbo.BicycleCyclists");
-            DropTable("dbo.GiroDItalias");
             DropTable("dbo.TourDeFrances");
+            DropTable("dbo.GiroDItalias");
+            DropTable("dbo.CyclistNexts");
             DropTable("dbo.Tires");
             DropTable("dbo.Wheels");
             DropTable("dbo.Bicycles");
