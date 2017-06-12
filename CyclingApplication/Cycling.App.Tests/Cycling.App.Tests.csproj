@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProviders.Tests\CreateCyclistTest\ConstructorTests.cs" />
+    <Compile Include="DataProviders.Tests\CreateCyclistTest\CreateMethodsTests.cs" />
     <Compile Include="DataProviders.Tests\CreateCyclistTest\PropertiesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
