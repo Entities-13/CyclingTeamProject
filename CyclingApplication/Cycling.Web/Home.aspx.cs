@@ -35,7 +35,7 @@ namespace Cycling.Web
         {
             string filePathJson = HttpContext.Current.Server.MapPath("~/Common/DataToImport/CyclistsData.json");
 
-            var loadCyclists = new LoadData();
+            var loadCyclists = new LoadCyclistData();
             var cyclists = loadCyclists.LoadDataFromJson(filePathJson);
 
             var cyclistsFactory = new CreateCyclist(cyclists);
@@ -47,7 +47,7 @@ namespace Cycling.Web
         protected void ButtonAddXmlData_Click(object sender, EventArgs e)
         {
             //getting xml - Tour de France
-            var loadCyclists = new LoadData();
+            var loadCyclists = new LoadXmlData();
 
             string filePathXml = HttpContext.Current.Server.MapPath("~/Common/DataToImport/France2.xml");
             var franceTour = new List<TourData>();

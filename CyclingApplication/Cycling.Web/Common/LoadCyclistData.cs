@@ -6,23 +6,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Xml;
 
 namespace Cycling.Web.Common
 {
-    public class LoadBicycleData : ILoadJsonData<Bicycle>
+    public class LoadCyclistData : ILoadJsonData<Cyclist>
     {
-        public ICollection<Bicycle> LoadDataFromJson(string filePath)
+        public ICollection<Cyclist> LoadDataFromJson(string filePath)
         {
             dynamic json = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(filePath));
-            var collectionOfBicycles = new List<Bicycle>();
+            var collectionOfCyclists = new List<Cyclist>();
             foreach (var item in json)
             {
-                var bicycle = JsonConvert.DeserializeObject<Bicycle>(item.ToString());
-                collectionOfBicycles.Add(bicycle);
+                var cyclist = JsonConvert.DeserializeObject<Cyclist>(item.ToString());
+                collectionOfCyclists.Add(cyclist);
             }
 
-            return collectionOfBicycles;
+            return collectionOfCyclists;
         }
     }
 }

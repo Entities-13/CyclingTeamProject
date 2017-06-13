@@ -197,9 +197,11 @@
       <DependentUpon>AddCyclist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\Constants.cs" />
-    <Compile Include="Common\Contracts\ILoadData.cs" />
+    <Compile Include="Common\Contracts\ILoadJsonData.cs" />
+    <Compile Include="Common\Contracts\ILoadXmlData.cs" />
     <Compile Include="Common\LoadBicycleData.cs" />
-    <Compile Include="Common\LoadData.cs" />
+    <Compile Include="Common\LoadCyclistData.cs" />
+    <Compile Include="Common\LoadXmlData.cs" />
     <Compile Include="Common\TourData.cs" />
     <Compile Include="Common\Validator.cs" />
     <Compile Include="Cyclists.aspx.cs">
