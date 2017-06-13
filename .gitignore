@@ -291,3 +291,4 @@ __pycache__/
 # Web.config
 # App.config
 # CyclingApplication/Cycling.Web/Web.config
+CyclingApplication/Cycling.Web/Common/PDFReports/Generated_PDF_Report.pdf

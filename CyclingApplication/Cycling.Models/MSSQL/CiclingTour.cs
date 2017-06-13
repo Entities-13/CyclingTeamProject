@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Cycling.Models.MSSQL;
 
 namespace Cycling.Models
 {
@@ -18,7 +15,9 @@ namespace Cycling.Models
 
         public int Distance { get; set; }
 
-        public TimeSpan TimeOfWinner { get; set; }
+        //[Column(TypeName = "timestamp")]
+        public double TimeOfWinner { get; set; }
 
+        public virtual CyclistNext CyclistNext_Id { get; set; }
     }
 }
