@@ -92,12 +92,32 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MigraDoc.DocumentObjectModel, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.Rendering.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.RtfRendering.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Npgsql, Version=3.2.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.3.2.3\lib\net451\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.Charting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLite.CodeFirst, Version=1.3.1.18, Culture=neutral, PublicKeyToken=eb96ba0a78d831a7, processorArchitecture=MSIL">
@@ -143,14 +163,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddCyclist.aspx" />
+    <Content Include="CSS\CyclingStyles.css" />
     <Content Include="Cyclists.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\background.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Common\DataToImport\CyclistsData.json" />
     <Content Include="Cycling.Master" />
+    <Content Include="Common\DataToImport\BicyclesData.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,8 +197,11 @@
       <DependentUpon>AddCyclist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\Constants.cs" />
-    <Compile Include="Common\Contracts\ILoadData.cs" />
-    <Compile Include="Common\LoadData.cs" />
+    <Compile Include="Common\Contracts\ILoadJsonData.cs" />
+    <Compile Include="Common\Contracts\ILoadXmlData.cs" />
+    <Compile Include="Common\LoadBicycleData.cs" />
+    <Compile Include="Common\LoadCyclistData.cs" />
+    <Compile Include="Common\LoadXmlData.cs" />
     <Compile Include="Common\TourData.cs" />
     <Compile Include="Common\Validator.cs" />
     <Compile Include="Cyclists.aspx.cs">
@@ -192,6 +218,7 @@
     <Compile Include="Cycling.Master.designer.cs">
       <DependentUpon>Cycling.Master</DependentUpon>
     </Compile>
+    <Compile Include="DataProviders\CreateBicycle.cs" />
     <Compile Include="DataProviders\CreateCyclist.cs" />
     <Compile Include="Contracts\ICreateCyclist.cs" />
     <Compile Include="Contracts\IRemoveCyclist.cs" />
@@ -199,6 +226,8 @@
     <Compile Include="DataProviders\DisplayCyclists.cs" />
     <Compile Include="DataProviders\FindCyclist.cs" />
     <Compile Include="Contracts\IFindCyclist.cs" />
+    <Compile Include="DataProviders\GeneratePDF.cs" />
+    <Compile Include="Contracts\ICreateBicycle.cs" />
     <Compile Include="DataProviders\RemoveCyclist.cs" />
     <Compile Include="DataProviders\UpdateCyclist.cs" />
     <Compile Include="Home.aspx.cs">
@@ -243,6 +272,10 @@
       <Project>{41a11000-09e6-4981-90a8-2600f3b5ee60}</Project>
       <Name>Cycling.Data.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cycling.Data.Postgre\Cycling.Data.Postgre.csproj">
+      <Project>{0D283310-84C0-479C-87ED-1064E807F133}</Project>
+      <Name>Cycling.Data.Postgre</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cycling.Data.SQLite\Cycling.Data.SQLite.csproj">
       <Project>{273718e3-899b-4c64-97e2-3ca7dc9e4652}</Project>
       <Name>Cycling.Data.SQLite</Name>
@@ -256,7 +289,9 @@
       <Name>Cycling.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Common\PDFReports\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

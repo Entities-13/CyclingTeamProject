@@ -1,5 +1,7 @@
 ﻿using Cycling.Data.Common;
+using Cycling.Data.Postgre;
 using Cycling.Data.SQLite;
+using Cycling.Models.PostgreSQL;
 using Cycling.Models.SQLite;
 using System;
 using System.Collections.Generic;
@@ -31,6 +33,26 @@ namespace Cycling.Web
             {
                 unitOfWork.CyclingDestinationsRepository.Add(destination);
                 unitOfWork.CyclingInstructorsRepository.Add(instructor);
+
+                unitOfWork.Commit();
+            }
+        }
+
+        protected void ButtonFillPostgre_Click(object sender, EventArgs e)
+        {
+            var championship = new Championship();
+            championship.Name = "World Championship";
+           
+            var sponsor = new Sponsor();
+            sponsor.Name = "Union Cycliste Internationale Test";
+
+            sponsor.Championships = new List<Championship>() { championship };
+            championship.Sponsors = new List<Sponsor>() { sponsor };
+
+            using (var unitOfWork = new EfUnitOfWork(new CyclingDbContextPostgre()))
+            {
+                unitOfWork.ChampionshipsRepository.Add(championship);
+                unitOfWork.SponsorsRepository.Add(sponsor);
 
                 unitOfWork.Commit();
             }

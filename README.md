@@ -26,18 +26,18 @@ Create a project of your choice and implement it using Code First approach with 
 - [x] Load some of the data from external files (Excel, XML, JSON, zip, etc.) of your choice
 - [x] The user should be able to manipulate the database through the client (basic CRUD. No need to provide roles for the users)
 - [x] Provide some usable user interface for the client (could be the console, WPF, Windows Forms, ASP.NET Web application, etc.)
-- [ ] Generate PDF reports based on your application
+- [x] Generate PDF reports based on your application
 
 ![project](http://i.imgur.com/gftm1XJ.png)
 
 ## Additional Requirements
 
-*	For the PDF export use a non-commercial third party framework
+*	[x] For the PDF export use a non-commercial third party framework
 *	The XML files should be read / written through the standard .NET parsers (of your choice)
 *	[x] For JSON serializations use a non-commercial library / framework of your choice
 
 ## Optional Requirements (Bonus points)
 
-* Unit test the application (think about how and use the techniques from the previous courses in Telerik Academy and the [Design Patterns course](http://telerikacademy.com/Courses/Courses/Details/431))
+* [x] Unit test the application (think about how and use the techniques from the previous courses in Telerik Academy and the [Design Patterns course](http://telerikacademy.com/Courses/Courses/Details/431))
 * [x] You could use Repository pattern or Services of your choice or use pure Entity Framework and DbContext (research the options and choose your preferable way to do it)
-* Completely finished and working project is not a requirement but it will be considered a plus
+* [x] Completely finished and working project is not a requirement but it will be considered a plus

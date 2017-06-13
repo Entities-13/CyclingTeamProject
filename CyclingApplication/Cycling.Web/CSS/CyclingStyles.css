@@ -1,0 +1,7 @@
+﻿body   {
+     background-image:url(../Images/bg.jpg);
+    margin-top: 0px;
+    background-repeat: no-repeat;
+    backface-visibility: visible;
+    background-size: cover;
+}

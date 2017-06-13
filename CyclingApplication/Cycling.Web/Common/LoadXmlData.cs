@@ -8,21 +8,8 @@ using System.Xml;
 
 namespace Cycling.Web.Common
 {
-    public class LoadData : ILoadData<Cyclist>
+    public class LoadXmlData : ILoadXmlData<Cyclist>
     {
-        public ICollection<Cyclist> LoadDataFromJson(string filePath)
-        {
-            dynamic json = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(filePath));
-            var collectionOfCyclists = new List<Cyclist>();
-            foreach (var item in json)
-            {
-                var cyclist = JsonConvert.DeserializeObject<Cyclist>(item.ToString());
-                collectionOfCyclists.Add(cyclist);
-            }
-
-            return collectionOfCyclists;
-        }
-
         public void GetListOfWinner(XmlReader node, IList<TourData> tour)
         {
             const int columnInXml = 8;

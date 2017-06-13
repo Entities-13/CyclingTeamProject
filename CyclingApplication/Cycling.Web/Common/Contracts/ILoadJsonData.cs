@@ -4,10 +4,8 @@ using Cycling.Models;
 
 namespace Cycling.Web.Common.Contracts
 {
-    public interface ILoadData<T>
+    public interface ILoadJsonData<T>
     {
         ICollection<T> LoadDataFromJson(string filePath);
-
-        void GetListOfWinner(XmlReader node, IList<TourData> tour);
     }
 }
