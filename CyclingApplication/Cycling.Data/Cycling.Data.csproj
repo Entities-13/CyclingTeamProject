@@ -50,13 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyclingDbContext.cs" />
-    <Compile Include="Migrations\201706120832307_InitialCreate.cs" />
-    <Compile Include="Migrations\201706120832307_InitialCreate.Designer.cs">
-      <DependentUpon>201706120832307_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706120732090_change constraints in CyclistNext.cs" />
-    <Compile Include="Migrations\201706120732090_change constraints in CyclistNext.Designer.cs">
-      <DependentUpon>201706120732090_change constraints in CyclistNext.cs</DependentUpon>
+    <Compile Include="Migrations\201706131411128_initial.cs" />
+    <Compile Include="Migrations\201706131411128_initial.Designer.cs">
+      <DependentUpon>201706131411128_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,11 +68,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706120832307_InitialCreate.resx">
-      <DependentUpon>201706120832307_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706120732090_change constraints in CyclistNext.resx">
-      <DependentUpon>201706120732090_change constraints in CyclistNext.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706131411128_initial.resx">
+      <DependentUpon>201706131411128_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

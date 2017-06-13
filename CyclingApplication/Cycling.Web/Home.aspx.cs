@@ -51,7 +51,11 @@ namespace Cycling.Web
 
             string filePathXml = HttpContext.Current.Server.MapPath("~/Common/DataToImport/France2.xml");
             var franceTour = new List<TourData>();
+            // parsing from xml to list
             loadCyclists.GetListOfWinner(XmlReader.Create(filePathXml), franceTour);
+
+            // seting from list DB
+            CreateCyclistNext.AddFromList(new CyclingDbContext(), franceTour);
 
             Response.Redirect("Cyclists.aspx");
         }

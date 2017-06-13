@@ -223,6 +223,7 @@
     <Compile Include="Contracts\ICreateCyclist.cs" />
     <Compile Include="Contracts\IRemoveCyclist.cs" />
     <Compile Include="Contracts\IUpdateCyclist.cs" />
+    <Compile Include="DataProviders\CreateCyclistNext.cs" />
     <Compile Include="DataProviders\DisplayCyclists.cs" />
     <Compile Include="DataProviders\FindCyclist.cs" />
     <Compile Include="Contracts\IFindCyclist.cs" />
