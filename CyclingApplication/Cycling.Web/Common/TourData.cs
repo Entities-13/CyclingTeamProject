@@ -13,7 +13,7 @@ namespace Cycling.Web.Common
 
         public int Distance { get; set; }
 
-        public TimeSpan TimeOfWinner { get; set; }
+        public Double TimeOfWinner { get; set; }
 
         public string FullName { get; set; }
 

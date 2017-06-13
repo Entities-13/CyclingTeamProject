@@ -42,10 +42,16 @@ namespace Cycling.Web
         {
             //getting xml - Tour de France
             var loadCyclists = new LoadData();
+            //var cyclistsFactory = new CreateCyclist(cyclists);
+            //cyclistsFactory.CreateMany();
 
             string filePathXml = HttpContext.Current.Server.MapPath("~/Common/DataToImport/France2.xml");
             var franceTour = new List<TourData>();
+            // parsing from xml to list
             loadCyclists.GetListOfWinner(XmlReader.Create(filePathXml), franceTour);
+
+            // seting from list DB
+            CreateCyclist.AddFromList(new CyclingDbContext(), franceTour);
 
             Response.Redirect("Cyclists.aspx");
         }
