@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
-using System.Linq;
-using Castle.Core.Internal;
 
 namespace Cycling.Web.Common
 {
@@ -42,37 +40,17 @@ namespace Cycling.Web.Common
                 }
 
                 //parsing data
-                //tour.Add
-                var firstName = element[5].Split(' ')[0].Trim();
-                var lastName = element[5].Split(' ')[1].Trim();
-                if (IsAllUpparCase(firstName) && !IsAllUpparCase(lastName))
-                {
-                    var tr = lastName;
-                    lastName = firstName;
-                    firstName = tr;
-                }
-
-                tour.Add (new TourData()
+                tour.Add(new TourData()
                 {
                     Year = DateTime.Parse("1-6-" + element[0]),
                     EtapsCount = int.Parse(element[1]),
                     Distance = int.Parse(element[2]),
-                    TimeOfWinner = double.Parse(element[3].Split('.', ',')[0] + "," + element[3].Split('.', ',')[1]),
-                    FullName = firstName + " " + lastName,
+                    TimeOfWinner = TimeSpan.FromHours(double.Parse(element[3].Split('.', ',')[0] + "," + element[3].Split('.', ',')[1])),
+                    FullName = element[5],
                     BirtdayOfWinner = DateTime.Parse(element[7]),
                     Nationalite = element[6]
                 });
             }
-        }
-
-        private bool IsAllUpparCase(string name)
-        {
-            var isUpper = true;
-            foreach (var ch in name)
-            {
-                isUpper &= char.IsUpper(ch);
-            }
-            return isUpper;
         }
     }
 }

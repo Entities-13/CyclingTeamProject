@@ -27,7 +27,7 @@ namespace Cycling.Data
 
         public virtual IDbSet<GiroDItalia> GiroDItalia { get; set; }
 
-        public virtual IDbSet<CyclistNext> CyclistNext { get; set; }
+        public virtual IDbSet<CyclistNext> CylistNext { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

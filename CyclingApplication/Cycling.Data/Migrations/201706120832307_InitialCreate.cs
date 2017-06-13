@@ -3,7 +3,7 @@ namespace Cycling.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -103,13 +103,13 @@ namespace Cycling.Data.Migrations
                         Year = c.DateTime(nullable: false),
                         Stage = c.Int(nullable: false),
                         Distance = c.Int(nullable: false),
-                        TimeOfWinner = c.Double(nullable: false),
-                        CyclistNext_Id_Id = c.Int(),
+                        TimeOfWinner = c.Time(nullable: false, precision: 7),
+                        CyclistNext_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.CyclistNexts", t => t.CyclistNext_Id_Id)
+                .ForeignKey("dbo.CyclistNexts", t => t.CyclistNext_Id)
                 .Index(t => t.Year)
-                .Index(t => t.CyclistNext_Id_Id);
+                .Index(t => t.CyclistNext_Id);
             
             CreateTable(
                 "dbo.TourDeFrances",
@@ -119,13 +119,13 @@ namespace Cycling.Data.Migrations
                         Year = c.DateTime(nullable: false),
                         Stage = c.Int(nullable: false),
                         Distance = c.Int(nullable: false),
-                        TimeOfWinner = c.Double(nullable: false),
-                        CyclistNext_Id_Id = c.Int(),
+                        TimeOfWinner = c.Time(nullable: false, precision: 7),
+                        CyclistNext_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.CyclistNexts", t => t.CyclistNext_Id_Id)
+                .ForeignKey("dbo.CyclistNexts", t => t.CyclistNext_Id)
                 .Index(t => t.Year)
-                .Index(t => t.CyclistNext_Id_Id);
+                .Index(t => t.CyclistNext_Id);
             
             CreateTable(
                 "dbo.BicycleCyclists",
@@ -144,8 +144,8 @@ namespace Cycling.Data.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.TourDeFrances", "CyclistNext_Id_Id", "dbo.CyclistNexts");
-            DropForeignKey("dbo.GiroDItalias", "CyclistNext_Id_Id", "dbo.CyclistNexts");
+            DropForeignKey("dbo.TourDeFrances", "CyclistNext_Id", "dbo.CyclistNexts");
+            DropForeignKey("dbo.GiroDItalias", "CyclistNext_Id", "dbo.CyclistNexts");
             DropForeignKey("dbo.Addresses", "Town_Id", "dbo.Towns");
             DropForeignKey("dbo.Cyclists", "Town_Id", "dbo.Towns");
             DropForeignKey("dbo.Bicycles", "Wheel_Id", "dbo.Wheels");
@@ -154,9 +154,9 @@ namespace Cycling.Data.Migrations
             DropForeignKey("dbo.BicycleCyclists", "Bicycle_Id", "dbo.Bicycles");
             DropIndex("dbo.BicycleCyclists", new[] { "Cyclist_Id" });
             DropIndex("dbo.BicycleCyclists", new[] { "Bicycle_Id" });
-            DropIndex("dbo.TourDeFrances", new[] { "CyclistNext_Id_Id" });
+            DropIndex("dbo.TourDeFrances", new[] { "CyclistNext_Id" });
             DropIndex("dbo.TourDeFrances", new[] { "Year" });
-            DropIndex("dbo.GiroDItalias", new[] { "CyclistNext_Id_Id" });
+            DropIndex("dbo.GiroDItalias", new[] { "CyclistNext_Id" });
             DropIndex("dbo.GiroDItalias", new[] { "Year" });
             DropIndex("dbo.Wheels", new[] { "Tire_Id" });
             DropIndex("dbo.Bicycles", new[] { "Wheel_Id" });
