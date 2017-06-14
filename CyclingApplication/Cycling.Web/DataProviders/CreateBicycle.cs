@@ -11,20 +11,13 @@ namespace Cycling.Web.DataProviders
 {
     public class CreateBicycle : ICreateBicycle
     {
-        public CreateBicycle(ICollection<Bicycle> bicycles)
-        {
-            this.Bicycles = bicycles;
-        }
-
-        public ICollection<Bicycle> Bicycles { get; set; }
-
-        public void CreateMany()
+        public void CreateMany(ICollection<Bicycle> bicycles)
         {
             using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
             {
                 var bicyclesInDb = unitOfWork.BicyclesRepository.GetAll().ToList();
 
-                foreach (var item in this.Bicycles)
+                foreach (var item in bicycles)
                 {
                     if (!bicyclesInDb.Exists(x =>
                                 x.Brand.ToLower() == item.Brand.ToLower() &&

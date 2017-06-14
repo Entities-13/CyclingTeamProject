@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddCyclist.aspx" />
+    <Content Include="Common\DataToImport\France2.xml" />
     <Content Include="CSS\CyclingStyles.css" />
     <Content Include="Cyclists.aspx" />
     <Content Include="Home.aspx" />

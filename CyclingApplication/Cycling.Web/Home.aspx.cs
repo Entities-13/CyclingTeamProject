@@ -38,8 +38,8 @@ namespace Cycling.Web
             var loadCyclists = new LoadCyclistData();
             var cyclists = loadCyclists.LoadDataFromJson(filePathJson);
 
-            var cyclistsFactory = new CreateCyclist(cyclists);
-            cyclistsFactory.CreateMany();
+            var cyclistsFactory = new CreateCyclist();
+            cyclistsFactory.CreateMany(cyclists);
 
             Response.Redirect("Cyclists.aspx");
         }
@@ -72,8 +72,8 @@ namespace Cycling.Web
             var loadBicycles = new LoadBicycleData();
             var bicycles = loadBicycles.LoadDataFromJson(filePathJson);
 
-            var bicyclesFactory = new CreateBicycle(bicycles);
-            bicyclesFactory.CreateMany();
+            var bicyclesFactory = new CreateBicycle();
+            bicyclesFactory.CreateMany(bicycles);
         }
     }
 }

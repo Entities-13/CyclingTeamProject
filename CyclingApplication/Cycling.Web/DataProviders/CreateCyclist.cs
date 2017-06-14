@@ -10,139 +10,18 @@ using System.Reflection;
 namespace Cycling.Web.DataProviders
 {
     public class CreateCyclist : ICreateCyclist
-    {
-        private string firstName;
-        private string lastName;
-        private int age;
-        private int tourDeFranceWins;
-        private int giroDItaliaWins;
-        private int vueltaWins;
-        private string currentTeam;
-
-        public CreateCyclist(string firstName, string lastName, int age, int tourWins, int giroWins, int vueltaWins, string team)
-        {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Age = age;
-            this.TourDeFranceWins = tourWins;
-            this.GiroDItaliaWins = giroWins;
-            this.VueltaWins = vueltaWins;
-            this.CurrentTeam = team;
-        }
-
-        // added for bulk insertion of data 
-        public CreateCyclist(ICollection<Cyclist> cyclists)
-        {
-            this.Cyclists = cyclists;
-        }
-
-        public ICollection<Cyclist> Cyclists { get; set; }
-
-        public string FirstName
-        {
-            get
-            {
-                return firstName;
-            }
-            set
-            {
-                Validator.CheckIfStringLengthIsValid(value, Constants.MAX_STRING_LENGTH, Constants.INVALID_FIRST_NAME_MSG);
-                Validator.CheckIfStringIsNullOrEmpty(value, Constants.INVALID_FIRST_NAME_MSG);
-                firstName = value;
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return lastName;
-            }
-            set
-            {
-                Validator.CheckIfStringLengthIsValid(value, Constants.MAX_STRING_LENGTH, Constants.INVALID_LAST_NAME_MSG);
-                Validator.CheckIfStringIsNullOrEmpty(value, Constants.INVALID_LAST_NAME_MSG);
-                lastName = value;
-            }
-        }
-
-        public int Age
-        {
-            get
-            {
-                return age;
-            }
-            set
-            {
-                Validator.CheckIfNull(value, Constants.INVALID_INT_MSG);
-                age = value;
-            }
-        }
-
-        public int TourDeFranceWins
-        {
-            get
-            {
-                return tourDeFranceWins;
-            }
-            set
-            {
-                Validator.CheckIfNull(value, Constants.INVALID_INT_MSG);
-                tourDeFranceWins = value;
-            }
-        }
-
-        public int GiroDItaliaWins
-        {
-            get
-            {
-                return giroDItaliaWins;
-            }
-            set
-            {
-                Validator.CheckIfNull(value, Constants.INVALID_INT_MSG);
-                giroDItaliaWins = value;
-            }
-        }
-
-        public int VueltaWins
-        {
-            get
-            {
-                return vueltaWins;
-            }
-            set
-            {
-                Validator.CheckIfNull(value, Constants.INVALID_INT_MSG);
-                vueltaWins = value;
-            }
-        }
-
-        public string CurrentTeam
-        {
-            get
-            {
-                return currentTeam;
-            }
-            set
-            {
-                Validator.CheckIfStringLengthIsValid(value, Constants.MAX_STRING_LENGTH + 10, Constants.INVALID_TEAM_MSG);
-                Validator.CheckIfStringIsNullOrEmpty(value, Constants.INVALID_TEAM_MSG);
-                currentTeam = value;
-            }
-        }
-
-        public void CreateOne()
+    { 
+        public void CreateOne(string firstName, string lastName, int age, int tourWins, int giroWins, int vueltaWins, string team)
         {
             var cyclistNew = new Cyclist()
             {
-                FirstName = this.firstName,
-                LastName = this.lastName,
-                Age = this.age,
-                TourDeFranceWins = this.tourDeFranceWins,
-                GiroDItaliaWins = this.giroDItaliaWins,
-                VueltaEspanaWins = this.vueltaWins,
-                CurrentTeam = this.currentTeam
+                FirstName = firstName,
+                LastName = lastName,
+                Age = age,
+                TourDeFranceWins = tourWins,
+                GiroDItaliaWins = giroWins,
+                VueltaEspanaWins = vueltaWins,
+                CurrentTeam = team
             };
 
             using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
@@ -153,13 +32,13 @@ namespace Cycling.Web.DataProviders
             }
         }
 
-        public void CreateMany()
+        public void CreateMany(ICollection<Cyclist> cyclists)
         {
             using (var unitOfWork = new EfUnitOfWork(new CyclingDbContext()))
             {
                 var cyclistsInDb = unitOfWork.CyclistsRepository.GetAll().ToList();
 
-                foreach (var item in this.Cyclists)
+                foreach (var item in cyclists)
                 {
                     if (!cyclistsInDb.Exists(x =>
                                 x.FirstName.ToLower() == item.FirstName.ToLower() &&
