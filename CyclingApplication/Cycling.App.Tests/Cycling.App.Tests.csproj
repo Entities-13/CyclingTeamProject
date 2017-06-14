@@ -59,9 +59,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataProviders.Tests\CreateCyclistTest\ConstructorTests.cs" />
     <Compile Include="DataProviders.Tests\CreateCyclistTest\CreateMethodsTests.cs" />
-    <Compile Include="DataProviders.Tests\CreateCyclistTest\PropertiesTests.cs" />
     <Compile Include="DataProviders.Tests\RemoveCyclistTests\ConstructorTests.cs" />
     <Compile Include="DataProviders.Tests\RemoveCyclistTests\PropertiesTests.cs" />
     <Compile Include="DataProviders.Tests\RemoveCyclistTests\RemoveMethodsTests.cs" />

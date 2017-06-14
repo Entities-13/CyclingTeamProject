@@ -1,4 +1,5 @@
-﻿using Cycling.Web.Contracts;
+﻿using Cycling.Models.MSSQL;
+using Cycling.Web.Contracts;
 using Cycling.Web.DataProviders;
 using Moq;
 using NUnit.Framework;
@@ -20,11 +21,11 @@ namespace Cycling.App.Tests.DataProviders.Tests.CreateCyclistTest
             var createCyclistMock = new Mock<ICreateCyclist>();
 
             // Act
-            createCyclistMock.Object.CreateOne();
-            createCyclistMock.Object.CreateOne();
+            createCyclistMock.Object.CreateOne("Ivan", "Ivanov", 22, 1, 1, 1, "Segafredo");
+            createCyclistMock.Object.CreateOne("Ivan", "Ivanov", 22, 1, 1, 1, "Segafredo");
 
             // Assert
-            createCyclistMock.Verify(x => x.CreateOne(), Times.Exactly(2));
+            createCyclistMock.Verify(x => x.CreateOne("Ivan", "Ivanov", 22, 1, 1, 1, "Segafredo"), Times.Exactly(2));
         }
 
         [Test]
@@ -32,13 +33,25 @@ namespace Cycling.App.Tests.DataProviders.Tests.CreateCyclistTest
         {
             // Arrange
             var createCyclistMock = new Mock<ICreateCyclist>();
+            var cyclist = new Cyclist()
+            {
+                FirstName = "Ivan",
+                LastName = "Ivanov",
+                Age=22,
+                TourDeFranceWins=1,
+                GiroDItaliaWins=1,
+                VueltaEspanaWins=1,
+                CurrentTeam="Segafredo"
+            };
+
+            var listOfCyclists = new List<Cyclist>() { cyclist };
 
             // Act
-            createCyclistMock.Object.CreateMany();
-            createCyclistMock.Object.CreateMany();
-            
+            createCyclistMock.Object.CreateMany(listOfCyclists);
+            createCyclistMock.Object.CreateMany(listOfCyclists);
+
             // Assert
-            createCyclistMock.Verify(x => x.CreateMany(), Times.Exactly(2));
+            createCyclistMock.Verify(x => x.CreateMany(listOfCyclists), Times.Exactly(2));
         }
     }
 }
